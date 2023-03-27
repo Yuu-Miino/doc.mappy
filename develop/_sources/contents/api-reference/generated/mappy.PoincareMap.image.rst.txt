@@ -1,0 +1,6 @@
+mappy.PoincareMap.image
+=======================
+
+.. currentmodule:: mappy
+
+.. automethod:: PoincareMap.image
