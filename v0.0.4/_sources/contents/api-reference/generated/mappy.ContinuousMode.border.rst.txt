@@ -1,0 +1,6 @@
+mappy.ContinuousMode.border
+===========================
+
+.. currentmodule:: mappy
+
+.. automethod:: ContinuousMode.border

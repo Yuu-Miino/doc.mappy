@@ -1,0 +1,6 @@
+mappy.ContinuousMode.function
+=============================
+
+.. currentmodule:: mappy
+
+.. automethod:: ContinuousMode.function
