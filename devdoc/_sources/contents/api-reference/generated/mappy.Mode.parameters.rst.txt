@@ -1,0 +1,11 @@
+:orphan:
+
+mappy.Mode.parameters
+=====================
+
+.. currentmodule:: mappy
+
+attribute
+
+.. autoattribute:: mappy.Mode.parameters
+

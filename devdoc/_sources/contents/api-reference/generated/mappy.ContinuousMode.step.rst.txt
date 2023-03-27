@@ -1,0 +1,6 @@
+mappy.ContinuousMode.step
+=========================
+
+.. currentmodule:: mappy
+
+.. automethod:: ContinuousMode.step
