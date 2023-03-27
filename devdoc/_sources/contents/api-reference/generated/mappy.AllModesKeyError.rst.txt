@@ -1,6 +1,0 @@
-﻿mappy.AllModesKeyError
-======================
-
-.. currentmodule:: mappy
-
-.. autoexception:: AllModesKeyError
