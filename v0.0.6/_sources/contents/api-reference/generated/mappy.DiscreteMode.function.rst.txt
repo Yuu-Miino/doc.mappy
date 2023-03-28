@@ -1,0 +1,6 @@
+mappy.DiscreteMode.function
+===========================
+
+.. currentmodule:: mappy
+
+.. automethod:: DiscreteMode.function
