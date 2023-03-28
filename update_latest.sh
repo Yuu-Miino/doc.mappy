@@ -7,4 +7,5 @@ latest=$(
     tail -1 |
     awk '{print $4}'
 )
-ln -s $latest "latest"
+unlink "latest"
+ln -s ${latest} "latest"
