@@ -432,7 +432,7 @@ document.write(`
 <dl class="py class">
 <dt class="sig sig-object py" id="mappy.SolveIvbmpResult">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mappy.</span></span><span class="sig-name descname"><span class="pre">SolveIvbmpResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans_history</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">jac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigvals</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigvecs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">hes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.SolveIvbmpResult" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">Y</span></code>]</p>
 <p>Result of <cite>solve_ivbmp</cite></p>
 <p>Result of <cite>solve_ivbmp</cite></p>
 <dl class="field-list simple">
@@ -446,7 +446,7 @@ document.write(`
 </dd>
 <dt><strong>eigvals</strong><span class="classifier">numpy.ndarray, float or None, optional</span></dt><dd><p>Eigenvalues of the Jacobian matrix, by default <cite>None</cite>.</p>
 </dd>
-<dt><strong>eigvecs</strong><span class="classifier">numpy.ndarray or None, optional</span></dt><dd><p>Eigenvectors corresponding to <cite>eigs</cite>, by default <cite>None</cite>.</p>
+<dt><strong>eigvecs</strong><span class="classifier">numpy.ndarray or None, optional</span></dt><dd><p>Eigenvectors corresponding to <cite>eigvals</cite>, by default <cite>None</cite>.</p>
 </dd>
 <dt><strong>hes</strong><span class="classifier">numpy.ndarray, float, or None, optional</span></dt><dd><p>Hessian tensor of the map, by default <cite>None</cite>.</p>
 </dd>
