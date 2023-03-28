@@ -1,0 +1,6 @@
+mappy.root.ResultDumper.dump\_values
+====================================
+
+.. currentmodule:: mappy.root
+
+.. automethod:: ResultDumper.dump_values

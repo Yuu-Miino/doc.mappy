@@ -51,8 +51,8 @@
         </script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="mappy.tools.DictVector" href="generated/mappy.tools.DictVector.html" />
-    <link rel="prev" title="mappy.AllModesKeyError" href="generated/mappy.AllModesKeyError.html" />
+    <link rel="next" title="mappy.tools.continuation" href="generated/mappy.tools.continuation.html" />
+    <link rel="prev" title="mappy.root.find_local_bf" href="generated/mappy.root.find_local_bf.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -341,6 +341,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="generated/mappy.SolveIvbmpResult.html">mappy.SolveIvbmpResult</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="generated/mappy.PoincareMap.html">mappy.PoincareMap</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="generated/mappy.PoincareMap.image.html">mappy.PoincareMap.image</a></li>
+<li class="toctree-l3"><a class="reference internal" href="generated/mappy.PoincareMap.image_detail.html">mappy.PoincareMap.image_detail</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="generated/mappy.SomeJacUndefined.html">mappy.SomeJacUndefined</a></li>
@@ -349,8 +350,21 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="generated/mappy.AllModesKeyError.html">mappy.AllModesKeyError</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Tools</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="generated/mappy.tools.DictVector.html">mappy.tools.DictVector</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="root.html">Root</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/mappy.root.find_cycle.html">mappy.root.find_cycle</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="generated/mappy.root.FindCycleResult.html">mappy.root.FindCycleResult</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/mappy.root.FindCycleResult.dump_values.html">mappy.root.FindCycleResult.dump_values</a></li>
+</ul>
+</li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="generated/mappy.root.ResultDumper.html">mappy.root.ResultDumper</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="generated/mappy.root.ResultDumper.dump_values.html">mappy.root.ResultDumper.dump_values</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="generated/mappy.root.find_local_bf.html">mappy.root.find_local_bf</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Tools</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="generated/mappy.tools.continuation.html">mappy.tools.continuation</a></li>
 </ul>
 </li>
 </ul>
@@ -416,8 +430,8 @@ document.write(`
 <h2>Classes<a class="headerlink" href="#classes" title="Permalink to this heading">#</a></h2>
 <table class="autosummary longtable table autosummary">
 <tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mappy.tools.DictVector.html#mappy.tools.DictVector" title="mappy.tools.DictVector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">DictVector</span></code></a>([states])</p></td>
-<td><p>Class for vectors accepting the dictionary input.</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mappy.tools.continuation.html#mappy.tools.continuation" title="mappy.tools.continuation"><code class="xref py py-obj docutils literal notranslate"><span class="pre">continuation</span></code></a>(fun, y0, params, end_val[, ...])</p></td>
+<td><p>Parameter continuation</p></td>
 </tr>
 </tbody>
 </table>
@@ -433,20 +447,20 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="generated/mappy.AllModesKeyError.html"
+       href="generated/mappy.root.find_local_bf.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">mappy.AllModesKeyError</p>
+        <p class="prev-next-title">mappy.root.find_local_bf</p>
       </div>
     </a>
     <a class="right-next"
-       href="generated/mappy.tools.DictVector.html"
+       href="generated/mappy.tools.continuation.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">mappy.tools.DictVector</p>
+        <p class="prev-next-title">mappy.tools.continuation</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

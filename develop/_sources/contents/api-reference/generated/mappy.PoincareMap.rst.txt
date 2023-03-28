@@ -12,6 +12,7 @@
          :toctree:
       
          PoincareMap.image
+         PoincareMap.image_detail
 
 
 

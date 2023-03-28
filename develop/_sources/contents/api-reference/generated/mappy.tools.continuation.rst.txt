@@ -1,0 +1,6 @@
+﻿mappy.tools.continuation
+========================
+
+.. currentmodule:: mappy.tools
+
+.. autofunction:: continuation

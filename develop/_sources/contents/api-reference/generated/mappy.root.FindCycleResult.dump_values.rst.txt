@@ -1,0 +1,6 @@
+mappy.root.FindCycleResult.dump\_values
+=======================================
+
+.. currentmodule:: mappy.root
+
+.. automethod:: FindCycleResult.dump_values
