@@ -365,6 +365,7 @@ document.write(`
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="mappy.tools.continuation.html">mappy.tools.continuation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.tools.is_type_of.html">mappy.tools.is_type_of</a></li>
 </ul>
 </li>
 </ul>
@@ -433,6 +434,27 @@ document.write(`
 <dt class="sig sig-object py" id="mappy.root.FindCycleResult">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mappy.root.</span></span><span class="sig-name descname"><span class="pre">FindCycleResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">success</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigvals</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">eigvecs</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">itr</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">err</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dump_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">['y',</span> <span class="pre">'eigvals']</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.root.FindCycleResult" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="mappy.root.ResultDumper.html#mappy.root.ResultDumper" title="mappy.root._cycle.ResultDumper"><code class="xref py py-class docutils literal notranslate"><span class="pre">ResultDumper</span></code></a>, <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">Y</span></code>]</p>
+<p>Result of finding a periodic cycle</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>success</strong><span class="classifier">bool</span></dt><dd><p>True if finding is success, or False otherwise.</p>
+</dd>
+<dt><strong>y</strong><span class="classifier">numpy.ndarray, float, or None</span></dt><dd><p>Value of <cite>y</cite> if available.</p>
+</dd>
+<dt><strong>eigvals</strong><span class="classifier">numpy.ndarray, float, or None</span></dt><dd><p>Eigenvalues of the Poincare map at y, if available.</p>
+</dd>
+<dt><strong>eigvecs</strong><span class="classifier">numpy.ndarray or None</span></dt><dd><p>Eigenvectors corresponding to <cite>eigvals</cite> if available.</p>
+</dd>
+<dt><strong>itr</strong><span class="classifier">int</span></dt><dd><p>Count of iterations of the method.</p>
+</dd>
+<dt><strong>err</strong><span class="classifier">numpy.ndarray</span></dt><dd><p>Error of <cite>T(y) - y</cite> in vector form, where <cite>T</cite> is the Poincare map.</p>
+</dd>
+<dt><strong>dump_keys</strong><span class="classifier">list, optional</span></dt><dd><p>Keys to be dumped by the method <cite>dump_values</cite>, by default [‘y’, ‘eigvals’]</p>
+</dd>
+</dl>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable table autosummary">
 <tbody>

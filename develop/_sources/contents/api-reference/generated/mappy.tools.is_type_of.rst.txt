@@ -1,0 +1,6 @@
+﻿mappy.tools.is\_type\_of
+========================
+
+.. currentmodule:: mappy.tools
+
+.. autofunction:: is_type_of

@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>mappy.PoincareMap &#8212; MapPy dev documentation</title>
+    <title>mappy.tools.is_type_of &#8212; MapPy dev documentation</title>
   
   
   
@@ -44,15 +44,14 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/design-tabs.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/api-reference/generated/mappy.PoincareMap';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/api-reference/generated/mappy.tools.is_type_of';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://yuu-miino.github.io/doc.mappy/latest/_static/switcher.json';
         DOCUMENTATION_OPTIONS.theme_switcher_version_match = 'dev';
         </script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="mappy.PoincareMap.image" href="mappy.PoincareMap.image.html" />
-    <link rel="prev" title="mappy.SolveIvbmpResult" href="mappy.SolveIvbmpResult.html" />
+    <link rel="prev" title="mappy.tools.continuation" href="mappy.tools.continuation.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -320,7 +319,7 @@ document.write(`
      aria-label="Section Navigation">
   <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
   <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../fundamentals.html">Fundamentals</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../fundamentals.html">Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2 has-children"><a class="reference internal" href="mappy.Mode.html">mappy.Mode</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="mappy.Mode.step.html">mappy.Mode.step</a></li>
 </ul>
@@ -339,7 +338,7 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="mappy.ModeStepResult.html">mappy.ModeStepResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.solve_ivbmp.html">mappy.solve_ivbmp</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.SolveIvbmpResult.html">mappy.SolveIvbmpResult</a></li>
-<li class="toctree-l2 current active has-children"><a class="current reference internal" href="#">mappy.PoincareMap</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2 has-children"><a class="reference internal" href="mappy.PoincareMap.html">mappy.PoincareMap</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="mappy.PoincareMap.image.html">mappy.PoincareMap.image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mappy.PoincareMap.image_detail.html">mappy.PoincareMap.image_detail</a></li>
 </ul>
@@ -363,9 +362,9 @@ document.write(`
 <li class="toctree-l2"><a class="reference internal" href="mappy.root.find_local_bf.html">mappy.root.find_local_bf</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../tools.html">Tools</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="mappy.tools.continuation.html">mappy.tools.continuation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mappy.tools.is_type_of.html">mappy.tools.is_type_of</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">mappy.tools.is_type_of</a></li>
 </ul>
 </li>
 </ul>
@@ -409,9 +408,9 @@ document.write(`
     <li class="breadcrumb-item"><a href="../index.html" class="nav-link">API Reference</a></li>
     
     
-    <li class="breadcrumb-item"><a href="../fundamentals.html" class="nav-link">Fundamentals</a></li>
+    <li class="breadcrumb-item"><a href="../tools.html" class="nav-link">Tools</a></li>
     
-    <li class="breadcrumb-item active" aria-current="page">mappy.PoincareMap</li>
+    <li class="breadcrumb-item active" aria-current="page">mappy.tools.is_type_of</li>
   </ul>
 </nav>
 </div>
@@ -428,41 +427,28 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section id="mappy-poincaremap">
-<h1>mappy.PoincareMap<a class="headerlink" href="#mappy-poincaremap" title="Permalink to this heading">#</a></h1>
-<dl class="py class">
-<dt class="sig sig-object py" id="mappy.PoincareMap">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mappy.</span></span><span class="sig-name descname"><span class="pre">PoincareMap</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">all_modes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">trans</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">initial_mode</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calc_jac</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">calc_hes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">options</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.PoincareMap" title="Permalink to this definition">#</a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Generic</span></code>[<code class="xref py py-obj docutils literal notranslate"><span class="pre">Y</span></code>, <code class="xref py py-obj docutils literal notranslate"><span class="pre">P</span></code>]</p>
-<p>Construct Poincare map</p>
-<p>Construct Poincare map</p>
+  <section id="mappy-tools-is-type-of">
+<h1>mappy.tools.is_type_of<a class="headerlink" href="#mappy-tools-is-type-of" title="Permalink to this heading">#</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="mappy.tools.is_type_of">
+<span class="sig-prename descclassname"><span class="pre">mappy.tools.</span></span><span class="sig-name descname"><span class="pre">is_type_of</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">type</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.tools.is_type_of" title="Permalink to this definition">#</a></dt>
+<dd><p>Check target is a given type with TypeGuard</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>all_modes</strong><span class="classifier">tuple[Mode, …]</span></dt><dd><p>Tuple containing all modes.</p>
+<dt><strong>target</strong><span class="classifier">Any</span></dt><dd><p>Target of the function.</p>
 </dd>
-<dt><strong>trans</strong><span class="classifier">dict[str, str  |  list[str]]</span></dt><dd><p>Dictionary defining transition rule.</p>
+<dt><strong>type</strong><span class="classifier">Type</span></dt><dd><p>Type to check.</p>
 </dd>
-<dt><strong>initial_mode</strong><span class="classifier">str</span></dt><dd><p>Initial mode of the Poincare map.</p>
+</dl>
 </dd>
-<dt><strong>calc_jac</strong><span class="classifier">bool, optional</span></dt><dd><p>Flag to calculate Jacobian matrix of the map, by default <cite>False</cite>.</p>
-</dd>
-<dt><strong>calc_hes</strong><span class="classifier">bool, optional</span></dt><dd><p>Flag to calculate Hessian matrix of the map, by default <cite>False</cite>.</p>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd><p>True if target is the given type, and False otherwise.</p>
 </dd>
 </dl>
 </dd>
 </dl>
-<p class="rubric">Methods</p>
-<table class="autosummary longtable table autosummary">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="mappy.PoincareMap.image.html#mappy.PoincareMap.image" title="mappy.PoincareMap.image"><code class="xref py py-obj docutils literal notranslate"><span class="pre">image</span></code></a>(y0[, params, iterations])</p></td>
-<td><p>Calculate image of the Poincare map</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="mappy.PoincareMap.image_detail.html#mappy.PoincareMap.image_detail" title="mappy.PoincareMap.image_detail"><code class="xref py py-obj docutils literal notranslate"><span class="pre">image_detail</span></code></a>(y0, params[, iterations])</p></td>
-<td><p>Calculate image of the Poincare map with detailed information</p></td>
-</tr>
-</tbody>
-</table>
 </dd></dl>
 
 </section>
@@ -476,22 +462,13 @@ document.write(`
                   <!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
-       href="mappy.SolveIvbmpResult.html"
+       href="mappy.tools.continuation.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">mappy.SolveIvbmpResult</p>
+        <p class="prev-next-title">mappy.tools.continuation</p>
       </div>
-    </a>
-    <a class="right-next"
-       href="mappy.PoincareMap.image.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">mappy.PoincareMap.image</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
     </a>
 </div>
                 </footer>
@@ -508,13 +485,13 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mappy.PoincareMap"><code class="docutils literal notranslate"><span class="pre">PoincareMap</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mappy.tools.is_type_of"><code class="docutils literal notranslate"><span class="pre">is_type_of()</span></code></a></li>
 </ul>
   </nav></div>
 
   <div class="sidebar-secondary-item">
   <div class="tocsection sourcelink">
-    <a href="../../../_sources/contents/api-reference/generated/mappy.PoincareMap.rst.txt">
+    <a href="../../../_sources/contents/api-reference/generated/mappy.tools.is_type_of.rst.txt">
       <i class="fa-solid fa-file-lines"></i> Show Source
     </a>
   </div>

@@ -365,6 +365,7 @@ document.write(`
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="mappy.tools.continuation.html">mappy.tools.continuation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.tools.is_type_of.html">mappy.tools.is_type_of</a></li>
 </ul>
 </li>
 </ul>
@@ -431,8 +432,29 @@ document.write(`
 <h1>mappy.root.find_cycle<a class="headerlink" href="#mappy-root-find-cycle" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="mappy.root.find_cycle">
-<span class="sig-prename descclassname"><span class="pre">mappy.root.</span></span><span class="sig-name descname"><span class="pre">find_cycle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">poincare_map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.root.find_cycle" title="Permalink to this definition">#</a></dt>
-<dd></dd></dl>
+<span class="sig-prename descclassname"><span class="pre">mappy.root.</span></span><span class="sig-name descname"><span class="pre">find_cycle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">poincare_map</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">period</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.root.find_cycle" title="Permalink to this definition">#</a></dt>
+<dd><p>Find a periodic cycle of given map</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>poincare_map</strong><span class="classifier">PoincareMap</span></dt><dd><p>Poincare map.</p>
+</dd>
+<dt><strong>y0</strong><span class="classifier">numpy.ndarray or float</span></dt><dd><p>Initial value for a periodic cycle.</p>
+</dd>
+<dt><strong>params</strong><span class="classifier">numpy.ndarray, float, or None</span></dt><dd><p>Parameter array to pass to <cite>poincare_map</cite>, by default <cite>None</cite>.</p>
+</dd>
+<dt><strong>period</strong><span class="classifier">int, optional</span></dt><dd><p>Period of the target periodic cycle, by default <cite>1</cite>.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>FindCycleResult</dt><dd><p>Instance containing the result of finding calculation</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 </section>
 

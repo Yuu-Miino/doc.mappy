@@ -8,10 +8,11 @@ Tools
 
 .. currentmodule:: mappy.tools
 
-Classes
+Methods
 -------
 
 .. autosummary::
     :toctree: generated/
 
     continuation
+    is_type_of

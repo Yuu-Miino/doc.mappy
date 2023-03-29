@@ -365,6 +365,7 @@ document.write(`
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="mappy.tools.continuation.html">mappy.tools.continuation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.tools.is_type_of.html">mappy.tools.is_type_of</a></li>
 </ul>
 </li>
 </ul>
@@ -433,6 +434,18 @@ document.write(`
 <dt class="sig sig-object py" id="mappy.root.ResultDumper">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mappy.root.</span></span><span class="sig-name descname"><span class="pre">ResultDumper</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dump_keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.root.ResultDumper" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Class fo result with dumper</p>
+<p>This class implements <cite>dump_values</cite> method.
+Subclass of <cite>ResultDumper</cite> can use the method
+to get a string of dumped data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>dump_keys</strong><span class="classifier">list[str]</span></dt><dd><p>Keys of the results to dump.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable table autosummary">
 <tbody>
