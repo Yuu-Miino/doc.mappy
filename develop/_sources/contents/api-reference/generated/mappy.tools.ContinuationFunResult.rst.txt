@@ -1,9 +1,9 @@
-﻿mappy.root.FindCycleResult
-==========================
+﻿mappy.tools.ContinuationFunResult
+=================================
 
-.. currentmodule:: mappy.root
+.. currentmodule:: mappy.tools
 
-.. autoclass:: FindCycleResult
+.. autoclass:: ContinuationFunResult
 
    
 

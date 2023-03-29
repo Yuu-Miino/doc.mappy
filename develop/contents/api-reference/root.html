@@ -352,19 +352,17 @@ document.write(`
 </li>
 <li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Root</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="generated/mappy.root.find_cycle.html">mappy.root.find_cycle</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="generated/mappy.root.FindCycleResult.html">mappy.root.FindCycleResult</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="generated/mappy.root.FindCycleResult.dump_values.html">mappy.root.FindCycleResult.dump_values</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="generated/mappy.root.ResultDumper.html">mappy.root.ResultDumper</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="generated/mappy.root.ResultDumper.dump_values.html">mappy.root.ResultDumper.dump_values</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="generated/mappy.root.trace_cycle.html">mappy.root.trace_cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/mappy.root.FindCycleResult.html">mappy.root.FindCycleResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="generated/mappy.root.find_local_bf.html">mappy.root.find_local_bf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/mappy.root.trace_local_bf.html">mappy.root.trace_local_bf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/mappy.root.FindLocalBfResult.html">mappy.root.FindLocalBfResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/mappy.root.ParameterKeyError.html">mappy.root.ParameterKeyError</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="tools.html">Tools</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="tools.html">Tools</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="generated/mappy.tools.continuation.html">mappy.tools.continuation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="generated/mappy.tools.ContinuationFunResult.html">mappy.tools.ContinuationFunResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="generated/mappy.tools.is_type_of.html">mappy.tools.is_type_of</a></li>
 </ul>
 </li>
@@ -434,11 +432,11 @@ document.write(`
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mappy.root.find_cycle.html#mappy.root.find_cycle" title="mappy.root.find_cycle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_cycle</span></code></a>(poincare_map, y0[, params, period])</p></td>
 <td><p>Find a periodic cycle of given map</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference internal" href="generated/mappy.root.FindCycleResult.html#mappy.root.FindCycleResult" title="mappy.root.FindCycleResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FindCycleResult</span></code></a>(success, y, eigvals, ...[, ...])</p></td>
-<td><p>Result of finding a periodic cycle</p></td>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mappy.root.trace_cycle.html#mappy.root.trace_cycle" title="mappy.root.trace_cycle"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trace_cycle</span></code></a>(poincare_map, y0, params, ...[, ...])</p></td>
+<td><p></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="generated/mappy.root.ResultDumper.html#mappy.root.ResultDumper" title="mappy.root.ResultDumper"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ResultDumper</span></code></a>(dump_keys)</p></td>
-<td><p>Class fo result with dumper</p></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mappy.root.FindCycleResult.html#mappy.root.FindCycleResult" title="mappy.root.FindCycleResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FindCycleResult</span></code></a>(itr, err[, success, y, ...])</p></td>
+<td><p>Result of finding a periodic cycle</p></td>
 </tr>
 </tbody>
 </table>
@@ -449,6 +447,15 @@ document.write(`
 <tbody>
 <tr class="row-odd"><td><p><a class="reference internal" href="generated/mappy.root.find_local_bf.html#mappy.root.find_local_bf" title="mappy.root.find_local_bf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">find_local_bf</span></code></a>(poincare_map, y0, params, ...)</p></td>
 <td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mappy.root.trace_local_bf.html#mappy.root.trace_local_bf" title="mappy.root.trace_local_bf"><code class="xref py py-obj docutils literal notranslate"><span class="pre">trace_local_bf</span></code></a>(poincare_map, y0, params, ...)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="generated/mappy.root.FindLocalBfResult.html#mappy.root.FindLocalBfResult" title="mappy.root.FindLocalBfResult"><code class="xref py py-obj docutils literal notranslate"><span class="pre">FindLocalBfResult</span></code></a>(itr, err[, success, y, ...])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="generated/mappy.root.ParameterKeyError.html#mappy.root.ParameterKeyError" title="mappy.root.ParameterKeyError"><code class="xref py py-obj docutils literal notranslate"><span class="pre">ParameterKeyError</span></code></a></p></td>
+<td><p>Error for conflict of the parameter keys</p></td>
 </tr>
 </tbody>
 </table>

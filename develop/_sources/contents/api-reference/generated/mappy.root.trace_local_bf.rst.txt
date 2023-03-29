@@ -1,0 +1,6 @@
+﻿mappy.root.trace\_local\_bf
+===========================
+
+.. currentmodule:: mappy.root
+
+.. autofunction:: trace_local_bf

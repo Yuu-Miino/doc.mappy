@@ -51,7 +51,7 @@
         </script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="mappy.tools.is_type_of" href="mappy.tools.is_type_of.html" />
+    <link rel="next" title="mappy.tools.ContinuationFunResult" href="mappy.tools.ContinuationFunResult.html" />
     <link rel="prev" title="Tools" href="../tools.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -352,19 +352,17 @@ document.write(`
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../root.html">Root</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="mappy.root.find_cycle.html">mappy.root.find_cycle</a></li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="mappy.root.FindCycleResult.html">mappy.root.FindCycleResult</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="mappy.root.FindCycleResult.dump_values.html">mappy.root.FindCycleResult.dump_values</a></li>
-</ul>
-</li>
-<li class="toctree-l2 has-children"><a class="reference internal" href="mappy.root.ResultDumper.html">mappy.root.ResultDumper</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l3"><a class="reference internal" href="mappy.root.ResultDumper.dump_values.html">mappy.root.ResultDumper.dump_values</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.root.trace_cycle.html">mappy.root.trace_cycle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.root.FindCycleResult.html">mappy.root.FindCycleResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.root.find_local_bf.html">mappy.root.find_local_bf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.root.trace_local_bf.html">mappy.root.trace_local_bf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.root.FindLocalBfResult.html">mappy.root.FindLocalBfResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.root.ParameterKeyError.html">mappy.root.ParameterKeyError</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="../tools.html">Tools</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="../tools.html">Tools</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">mappy.tools.continuation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.tools.ContinuationFunResult.html">mappy.tools.ContinuationFunResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.tools.is_type_of.html">mappy.tools.is_type_of</a></li>
 </ul>
 </li>
@@ -432,7 +430,7 @@ document.write(`
 <h1>mappy.tools.continuation<a class="headerlink" href="#mappy-tools-continuation" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="mappy.tools.continuation">
-<span class="sig-prename descclassname"><span class="pre">mappy.tools.</span></span><span class="sig-name descname"><span class="pre">continuation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param_idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose_precision</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.tools.continuation" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mappy.tools.</span></span><span class="sig-name descname"><span class="pre">continuation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param_idx</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.tools.continuation" title="Permalink to this definition">#</a></dt>
 <dd><p>Parameter continuation</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -449,15 +447,11 @@ document.write(`
 </dd>
 <dt><strong>resolution</strong><span class="classifier">int, optional</span></dt><dd><p>Resolution of the continuation from the current value to <cite>end_val</cite>, by default <cite>100</cite>.</p>
 </dd>
-<dt><strong>verbose</strong><span class="classifier">bool, optional</span></dt><dd><p>Verbose option, by default True</p>
-</dd>
-<dt><strong>verbose_precision</strong><span class="classifier">int, optional</span></dt><dd><p>Precision of numerics in verbose output, by default <cite>10</cite>.</p>
-</dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt>list of y and params</dt><dd><p>Final value of <cite>y</cite> and <cite>params</cite>.</p>
+<dt>tuple of y and params</dt><dd><p>Final value of <cite>y</cite> and <cite>params</cite>.</p>
 </dd>
 </dl>
 </dd>
@@ -484,11 +478,11 @@ document.write(`
       </div>
     </a>
     <a class="right-next"
-       href="mappy.tools.is_type_of.html"
+       href="mappy.tools.ContinuationFunResult.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">mappy.tools.is_type_of</p>
+        <p class="prev-next-title">mappy.tools.ContinuationFunResult</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

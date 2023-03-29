@@ -1,9 +1,9 @@
-﻿mappy.root.FindCycleResult
-==========================
+﻿mappy.root.FindLocalBfResult
+============================
 
 .. currentmodule:: mappy.root
 
-.. autoclass:: FindCycleResult
+.. autoclass:: FindLocalBfResult
 
    
 
