@@ -1,0 +1,6 @@
+﻿mappy.solve\_poincare\_map
+==========================
+
+.. currentmodule:: mappy
+
+.. autofunction:: solve_poincare_map

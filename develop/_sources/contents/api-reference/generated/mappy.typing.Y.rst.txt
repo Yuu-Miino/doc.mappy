@@ -1,0 +1,6 @@
+﻿mappy.typing.Y
+==============
+
+.. currentmodule:: mappy.typing
+
+.. autodata:: Y

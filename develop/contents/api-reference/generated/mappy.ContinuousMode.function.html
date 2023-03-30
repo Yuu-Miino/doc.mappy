@@ -44,6 +44,8 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1], "deriv": ["\\frac{d#1}{d#2}", 2], "pderiv": ["\\frac{\\partial#1}{\\partial#2}", 2], "parens": ["\\left(#1\\right)", 1], "braces": ["\\left\\{#1\\right\\}", 1], "brackets": ["\\left[#1\\rigth]", 1], "set": ["\\braces{#1}", 1], "case": ["\\left{#1\\right.", 1], "R": ["\\mathbb{R}"]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'contents/api-reference/generated/mappy.ContinuousMode.function';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://yuu-miino.github.io/doc.mappy/latest/_static/switcher.json';
@@ -336,34 +338,45 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="mappy.DiscreteMode.step.html">mappy.DiscreteMode.step</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="mappy.ModeStepResult.html">mappy.ModeStepResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.solve_ivbmp.html">mappy.solve_ivbmp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mappy.SolveIvbmpResult.html">mappy.SolveIvbmpResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.solve_poincare_map.html">mappy.solve_poincare_map</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="mappy.PoincareMap.html">mappy.PoincareMap</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="mappy.PoincareMap.image.html">mappy.PoincareMap.image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mappy.PoincareMap.image_detail.html">mappy.PoincareMap.image_detail</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.BasicResult.html">mappy.BasicResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.ModeStepResult.html">mappy.ModeStepResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.SolveIvbmpResult.html">mappy.SolveIvbmpResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.SomeJacUndefined.html">mappy.SomeJacUndefined</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.SomeHesUndefined.html">mappy.SomeHesUndefined</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.TransitionKeyError.html">mappy.TransitionKeyError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.AllModesKeyError.html">mappy.AllModesKeyError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.NextModeNotFoundError.html">mappy.NextModeNotFoundError</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../root.html">Root</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="mappy.root.find_cycle.html">mappy.root.find_cycle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.root.trace_cycle.html">mappy.root.trace_cycle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mappy.root.FindCycleResult.html">mappy.root.FindCycleResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.root.find_local_bf.html">mappy.root.find_local_bf</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.root.trace_local_bf.html">mappy.root.trace_local_bf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.root.FindCycleResult.html">mappy.root.FindCycleResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.root.FindLocalBfResult.html">mappy.root.FindLocalBfResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.root.ParameterKeyError.html">mappy.root.ParameterKeyError</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="mappy.tools.continuation.html">mappy.tools.continuation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mappy.tools.ContinuationFunResult.html">mappy.tools.ContinuationFunResult</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mappy.tools.is_type_of.html">mappy.tools.is_type_of</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../continuation.html">Parameter Continuation</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="mappy.continuation.continuation.html">mappy.continuation.continuation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.continuation.ContinuationFunResult.html">mappy.continuation.ContinuationFunResult</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Typing</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="mappy.typing.Y.html">mappy.typing.Y</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.typing.YF.html">mappy.typing.YF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.typing.YB.html">mappy.typing.YB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.typing.YC.html">mappy.typing.YC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.typing.P.html">mappy.typing.P</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.typing.is_type_of.html">mappy.typing.is_type_of</a></li>
 </ul>
 </li>
 </ul>
@@ -435,23 +448,56 @@ document.write(`
 <h1>mappy.ContinuousMode.function<a class="headerlink" href="#mappy-continuousmode-function" title="Permalink to this heading">#</a></h1>
 <dl class="py method">
 <dt class="sig sig-object py" id="mappy.ContinuousMode.function">
-<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ContinuousMode.</span></span><span class="sig-name descname"><span class="pre">function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.ContinuousMode.function" title="Permalink to this definition">#</a></dt>
-<dd><p>Decorator for <cite>fun</cite> in <cite>ContinuousTimeMode</cite></p>
-<p>Decorator for <cite>fun</cite> in <cite>ContinuousTimeMode</cite></p>
+<em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ContinuousMode.</span></span><span class="sig-name descname"><span class="pre">function</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dimension</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param_keys</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">[]</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.ContinuousMode.function" title="Permalink to this definition">#</a></dt>
+<dd><p>Decorator for <code class="docutils literal notranslate"><span class="pre">fun</span></code> in <code class="docutils literal notranslate"><span class="pre">ContinuousTimeMode</span></code></p>
+<p>The method provides the decorator for <code class="docutils literal notranslate"><span class="pre">fun</span></code> in <code class="docutils literal notranslate"><span class="pre">ContinuousTimeMode</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>dimension</strong><span class="classifier">int</span></dt><dd><p>Dimension of the state space.</p>
+<dt><strong>dimension</strong><span class="classifier">int</span></dt><dd><p>Dimension of the state space of the system.</p>
+</dd>
+<dt><strong>param_keys</strong><span class="classifier">list[str]</span></dt><dd><p>List of keys for the parameters used in <code class="docutils literal notranslate"><span class="pre">fun</span></code>, by default <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt>Callable</dt><dd><p>Decorated <cite>fun</cite> function compatible with <cite>ContinousTimeMode</cite></p>
+<dt>Callable</dt><dd><p>Decorated <code class="docutils literal notranslate"><span class="pre">fun</span></code> function compatible with <code class="docutils literal notranslate"><span class="pre">fun</span></code> in <code class="docutils literal notranslate"><span class="pre">ContinousTimeMode</span></code></p>
 </dd>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="mappy.ContinuousMode.html#mappy.ContinuousMode" title="mappy.ContinuousMode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mappy.ContinuousMode</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<p>The Izhikevich neuron model includes a system of ODEs
+defined in the 2-dimensional state space <span class="math notranslate nohighlight">\(\R^2\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\deriv{v}{t} &amp;= 0.04 v^2 + 5 v + 140 - u + I, \\
+\deriv{u}{t} &amp;= a(bv-u)\end{split}\]</div>
+<p>The equivalent description for the system by <code class="docutils literal notranslate"><span class="pre">mappy</span></code> is as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mappy</span> <span class="kn">import</span> <span class="n">ContinuousMode</span> <span class="k">as</span> <span class="n">CM</span>
+
+<span class="nd">@CM</span><span class="o">.</span><span class="n">function</span><span class="p">(</span><span class="n">dimension</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">param_keys</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;I&#39;</span><span class="p">])</span>
+<span class="k">def</span> <span class="nf">izhikevich</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">param</span><span class="p">):</span>
+    <span class="n">v</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="s1">&#39;b&#39;</span><span class="p">]</span>
+    <span class="n">I</span> <span class="o">=</span> <span class="n">param</span><span class="p">[</span><span class="s1">&#39;I&#39;</span><span class="p">]</span>
+
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span>
+        <span class="mf">0.04</span> <span class="o">*</span> <span class="p">(</span><span class="n">v</span> <span class="o">**</span> <span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="mf">5.0</span> <span class="o">*</span> <span class="n">v</span> <span class="o">+</span> <span class="mf">140.0</span> <span class="o">-</span> <span class="n">u</span> <span class="o">+</span> <span class="n">I</span><span class="p">,</span>
+        <span class="n">a</span> <span class="o">*</span> <span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">v</span> <span class="o">-</span> <span class="n">u</span><span class="p">)</span>
+    <span class="p">])</span>
+
+<span class="c1"># `izhikevich` is compatible with ContinuousMode class</span>
+<span class="n">mode1</span> <span class="o">=</span> <span class="n">CM</span><span class="p">(</span><span class="n">name</span> <span class="o">=</span> <span class="s1">&#39;mode1&#39;</span><span class="p">,</span> <span class="n">fun</span> <span class="o">=</span> <span class="n">izhikevich</span><span class="p">)</span>
+</pre></div>
+</div>
 </dd></dl>
 
 </section>

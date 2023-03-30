@@ -44,6 +44,8 @@
     <script src="../../../_static/doctools.js"></script>
     <script src="../../../_static/sphinx_highlight.js"></script>
     <script src="../../../_static/design-tabs.js"></script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1], "deriv": ["\\frac{d#1}{d#2}", 2], "pderiv": ["\\frac{\\partial#1}{\\partial#2}", 2], "parens": ["\\left(#1\\right)", 1], "braces": ["\\left\\{#1\\right\\}", 1], "brackets": ["\\left[#1\\rigth]", 1], "set": ["\\braces{#1}", 1], "case": ["\\left{#1\\right.", 1], "R": ["\\mathbb{R}"]}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'contents/api-reference/generated/mappy.ContinuousMode.border';</script>
     <script>
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://yuu-miino.github.io/doc.mappy/latest/_static/switcher.json';
@@ -336,34 +338,45 @@ document.write(`
 <li class="toctree-l3"><a class="reference internal" href="mappy.DiscreteMode.step.html">mappy.DiscreteMode.step</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="mappy.ModeStepResult.html">mappy.ModeStepResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.solve_ivbmp.html">mappy.solve_ivbmp</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mappy.SolveIvbmpResult.html">mappy.SolveIvbmpResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.solve_poincare_map.html">mappy.solve_poincare_map</a></li>
 <li class="toctree-l2 has-children"><a class="reference internal" href="mappy.PoincareMap.html">mappy.PoincareMap</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l3"><a class="reference internal" href="mappy.PoincareMap.image.html">mappy.PoincareMap.image</a></li>
 <li class="toctree-l3"><a class="reference internal" href="mappy.PoincareMap.image_detail.html">mappy.PoincareMap.image_detail</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.BasicResult.html">mappy.BasicResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.ModeStepResult.html">mappy.ModeStepResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.SolveIvbmpResult.html">mappy.SolveIvbmpResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.SomeJacUndefined.html">mappy.SomeJacUndefined</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.SomeHesUndefined.html">mappy.SomeHesUndefined</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.TransitionKeyError.html">mappy.TransitionKeyError</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.AllModesKeyError.html">mappy.AllModesKeyError</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.NextModeNotFoundError.html">mappy.NextModeNotFoundError</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../root.html">Root</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="mappy.root.find_cycle.html">mappy.root.find_cycle</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.root.trace_cycle.html">mappy.root.trace_cycle</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mappy.root.FindCycleResult.html">mappy.root.FindCycleResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.root.find_local_bf.html">mappy.root.find_local_bf</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.root.trace_local_bf.html">mappy.root.trace_local_bf</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.root.FindCycleResult.html">mappy.root.FindCycleResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.root.FindLocalBfResult.html">mappy.root.FindLocalBfResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="mappy.root.ParameterKeyError.html">mappy.root.ParameterKeyError</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Tools</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="mappy.tools.continuation.html">mappy.tools.continuation</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mappy.tools.ContinuationFunResult.html">mappy.tools.ContinuationFunResult</a></li>
-<li class="toctree-l2"><a class="reference internal" href="mappy.tools.is_type_of.html">mappy.tools.is_type_of</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../continuation.html">Parameter Continuation</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="mappy.continuation.continuation.html">mappy.continuation.continuation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.continuation.ContinuationFunResult.html">mappy.continuation.ContinuationFunResult</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../tools.html">Typing</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="mappy.typing.Y.html">mappy.typing.Y</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.typing.YF.html">mappy.typing.YF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.typing.YB.html">mappy.typing.YB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.typing.YC.html">mappy.typing.YC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.typing.P.html">mappy.typing.P</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mappy.typing.is_type_of.html">mappy.typing.is_type_of</a></li>
 </ul>
 </li>
 </ul>
@@ -436,23 +449,67 @@ document.write(`
 <dl class="py method">
 <dt class="sig sig-object py" id="mappy.ContinuousMode.border">
 <em class="property"><span class="pre">classmethod</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">ContinuousMode.</span></span><span class="sig-name descname"><span class="pre">border</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">direction</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.ContinuousMode.border" title="Permalink to this definition">#</a></dt>
-<dd><p>Decorator for the element of <cite>borders</cite> in <cite>ContinuousTimeMode</cite></p>
-<p>Decorator for the element of <cite>borders</cite> in <cite>ContinuousTimeMode</cite></p>
+<dd><p>Decorator for the element of <code class="docutils literal notranslate"><span class="pre">borders</span></code> in <code class="docutils literal notranslate"><span class="pre">ContinuousTimeMode</span></code></p>
+<p>The method providing the decorator for a element of <code class="docutils literal notranslate"><span class="pre">borders</span></code> in <code class="docutils literal notranslate"><span class="pre">ContinuousTimeMode</span></code>.
+The calling signature is <code class="docutils literal notranslate"><span class="pre">border(y,</span> <span class="pre">p</span> <span class="pre">|</span> <span class="pre">None)</span></code> and it should be the same one as <code class="docutils literal notranslate"><span class="pre">fun</span></code>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>direction</strong><span class="classifier">int, optional</span></dt><dd><p>Direction of a zero crossing, by default <cite>1</cite>.
-The value is directly passed to the <cite>direction</cite> attribute of the <cite>event</cite> function, which is the argument of <cite>solve_ivp</cite>.</p>
+<dt><strong>direction</strong><span class="classifier">int, optional</span></dt><dd><p>Direction of a zero crossing, by default <code class="docutils literal notranslate"><span class="pre">1</span></code>.
+The value is directly passed to the <code class="docutils literal notranslate"><span class="pre">direction</span></code> attribute of the
+<code class="docutils literal notranslate"><span class="pre">event</span></code> function, which is the argument of <code class="docutils literal notranslate"><span class="pre">solve_ivp</span></code>.</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
-<dt>Callable</dt><dd><p>Decorated <cite>border</cite> function compatible with <cite>ContinuousTimeMode</cite></p>
+<dt>Callable</dt><dd><p>Decorated <code class="docutils literal notranslate"><span class="pre">border</span></code> function compatible with <code class="docutils literal notranslate"><span class="pre">ContinuousTimeMode</span></code></p>
 </dd>
 </dl>
 </dd>
 </dl>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<dl class="simple">
+<dt><a class="reference internal" href="mappy.ContinuousMode.html#mappy.ContinuousMode" title="mappy.ContinuousMode"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mappy.ContinuousMode</span></code></a></dt><dd></dd>
+</dl>
+</div>
+<p class="rubric">Examples</p>
+<p>Assume <span class="math notranslate nohighlight">\(a \in \R\)</span> be a parameter for the border function and
+<span class="math notranslate nohighlight">\(\bm x=(x, y)\)</span> is a state vector.
+One can implement the border defined by <span class="math notranslate nohighlight">\(y+a=0\)</span> as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mappy</span> <span class="kn">import</span> <span class="n">ContinuousMode</span> <span class="k">as</span> <span class="n">CM</span>
+
+<span class="nd">@CM</span><span class="o">.</span><span class="n">border</span><span class="p">(</span><span class="n">direction</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">my_border1</span> <span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>The following example with strict type hints is the same as above one.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">mappy</span> <span class="kn">import</span> <span class="n">ContinuousMode</span> <span class="k">as</span> <span class="n">CM</span>
+<span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">ndarray</span>
+
+<span class="nd">@CM</span><span class="o">.</span><span class="n">border</span><span class="p">(</span><span class="n">direction</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">my_border1</span> <span class="p">(</span><span class="n">y</span><span class="p">:</span> <span class="n">ndarray</span><span class="p">,</span> <span class="n">p</span><span class="p">:</span> <span class="nb">dict</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">float</span><span class="p">]</span> <span class="o">|</span> <span class="kc">None</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">p</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Parameter should not be None&#39;</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Another example below implements the border defined by <span class="math notranslate nohighlight">\(y - 10 = 0\)</span>,
+which does not require any parameters.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@border</span><span class="p">(</span><span class="n">direction</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">my_border_fun</span> <span class="p">(</span><span class="n">y</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">y</span> <span class="o">-</span> <span class="mi">10</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>In the last example, <code class="docutils literal notranslate"><span class="pre">my_border_fun</span></code> does not use parameter.
+However it should implement the argument place to input parameter
+due to the package limitation.
+In such a case, the throwaway variable <code class="docutils literal notranslate"><span class="pre">_</span></code> is useful.</p>
+</div>
 </dd></dl>
 
 </section>
