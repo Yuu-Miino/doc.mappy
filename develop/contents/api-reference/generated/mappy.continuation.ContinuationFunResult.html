@@ -441,7 +441,7 @@ document.write(`
 <h1>mappy.continuation.ContinuationFunResult<a class="headerlink" href="#mappy-continuation-continuationfunresult" title="Permalink to this heading">#</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="mappy.continuation.ContinuationFunResult">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mappy.continuation.</span></span><span class="sig-name descname"><span class="pre">ContinuationFunResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">success</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.continuation.ContinuationFunResult" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">mappy.continuation.</span></span><span class="sig-name descname"><span class="pre">ContinuationFunResult</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">success</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">p</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">others</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.continuation.ContinuationFunResult" title="Permalink to this definition">#</a></dt>
 <dd><p>Bases: <a class="reference internal" href="mappy.BasicResult.html#mappy.BasicResult" title="mappy.fundamentals._core.BasicResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">BasicResult</span></code></a></p>
 <p>Result of each step in parameter continuation</p>
 <p>The class containing the result of a function, which
@@ -455,6 +455,8 @@ is a sinle step of a parameter continuation.</p>
 the parameter of the step.</p>
 </dd>
 <dt><strong>p</strong><span class="classifier">dict[str, Any] | None</span></dt><dd><p>Parameter dictionary.</p>
+</dd>
+<dt><strong>others</strong><span class="classifier">dict[str, Any] | None</span></dt><dd><p>Any other values to return, by default <code class="docutils literal notranslate"><span class="pre">None</span></code>.</p>
 </dd>
 </dl>
 </dd>
