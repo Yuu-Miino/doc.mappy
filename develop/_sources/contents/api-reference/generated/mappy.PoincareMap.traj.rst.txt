@@ -1,0 +1,6 @@
+mappy.PoincareMap.traj
+======================
+
+.. currentmodule:: mappy
+
+.. automethod:: PoincareMap.traj
