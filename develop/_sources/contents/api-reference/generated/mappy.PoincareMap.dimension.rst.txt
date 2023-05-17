@@ -1,0 +1,6 @@
+mappy.PoincareMap.dimension
+===========================
+
+.. currentmodule:: mappy
+
+.. automethod:: PoincareMap.dimension

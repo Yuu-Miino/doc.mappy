@@ -441,7 +441,7 @@ document.write(`
 <h1>mappy.continuation.continuation<a class="headerlink" href="#mappy-continuation-continuation" title="Permalink to this heading">#</a></h1>
 <dl class="py function">
 <dt class="sig sig-object py" id="mappy.continuation.continuation">
-<span class="sig-prename descclassname"><span class="pre">mappy.continuation.</span></span><span class="sig-name descname"><span class="pre">continuation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param_idx</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.continuation.continuation" title="Permalink to this definition">#</a></dt>
+<span class="sig-prename descclassname"><span class="pre">mappy.continuation.</span></span><span class="sig-name descname"><span class="pre">continuation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">fun</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">y0</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">end_val</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">param_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">resolution</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">100</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">show_progress</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#mappy.continuation.continuation" title="Permalink to this definition">#</a></dt>
 <dd><p>Parameter continuation</p>
 <p>The method to operate the parameter continuation of a given <cite>fun</cite>.
 It determines the step size of the continuation from given parameters
@@ -460,7 +460,7 @@ are available in each subpackage, like <cite>mappy.root.trace_cycle</cite>.</p>
 </dd>
 <dt><strong>end_val</strong><span class="classifier">float</span></dt><dd><p>End value of the continuation.</p>
 </dd>
-<dt><strong>param_idx</strong><span class="classifier">int, optional</span></dt><dd><p>Index of the parameter to continue in <cite>params</cite>.</p>
+<dt><strong>param_key</strong><span class="classifier">int, optional</span></dt><dd><p>Index of the parameter to continue in <cite>params</cite>.</p>
 </dd>
 <dt><strong>resolution</strong><span class="classifier">int, optional</span></dt><dd><p>Resolution of the continuation from the current value to <cite>end_val</cite>, by default <cite>100</cite>.</p>
 </dd>

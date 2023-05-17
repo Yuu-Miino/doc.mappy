@@ -11,6 +11,7 @@
       .. autosummary::
          :toctree:
       
+         PoincareMap.dimension
          PoincareMap.image
          PoincareMap.image_detail
          PoincareMap.traj
