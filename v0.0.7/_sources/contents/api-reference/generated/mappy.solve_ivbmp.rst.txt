@@ -1,0 +1,6 @@
+﻿mappy.solve\_ivbmp
+==================
+
+.. currentmodule:: mappy
+
+.. autofunction:: solve_ivbmp
