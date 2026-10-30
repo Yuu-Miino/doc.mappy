@@ -502,7 +502,12 @@ a <a class="reference internal" href="../api-reference/generated/mappy_ds.Diffeo
 </pre></div>
 </div>
 <p>The interactive plot shows only the image points (<code class="docutils literal notranslate"><span class="pre">only_map=True</span></code>); <code class="docutils literal notranslate"><span class="pre">a</span></code>
-and <code class="docutils literal notranslate"><span class="pre">b</span></code> can be changed with the keyboard.</p>
+and <code class="docutils literal notranslate"><span class="pre">b</span></code> can be changed with the keyboard. Two further modes sweep
+<span class="math notranslate nohighlight">\(a \in [1, 1.42]\)</span>: <code class="docutils literal notranslate"><span class="pre">--mode</span> <span class="pre">bifurcation</span></code> draws the one-parameter
+bifurcation diagram of <span class="math notranslate nohighlight">\(x\)</span>, and <code class="docutils literal notranslate"><span class="pre">--mode</span> <span class="pre">mle</span></code> the maximum Lyapunov
+exponent by Benettin’s method — a unit tangent vector is pushed forward by
+<code class="docutils literal notranslate"><span class="pre">res.jac</span></code> at every iteration and renormalised — which is positive exactly
+in the chaotic windows of the diagram.</p>
 </section>
 <section id="izhikevich-neuron">
 <h2>Izhikevich neuron<a class="headerlink" href="#izhikevich-neuron" title="Link to this heading">#</a></h2>
@@ -549,7 +554,10 @@ the stroboscopic Poincaré map samples <span class="math notranslate nohighlight
 <p>The <code class="docutils literal notranslate"><span class="pre">trace</span></code> mode follows the fixed point along <span class="math notranslate nohighlight">\(B\)</span> and locates
 period-doubling bifurcations (the first at <span class="math notranslate nohighlight">\(B \approx 0.17169\)</span> for
 <span class="math notranslate nohighlight">\(k = 0.2\)</span>, <span class="math notranslate nohighlight">\(B_0 = 0.1\)</span>), then continues one of them in the
-<span class="math notranslate nohighlight">\((B, B_0)\)</span> plane.</p>
+<span class="math notranslate nohighlight">\((B, B_0)\)</span> plane.
+<code class="docutils literal notranslate"><span class="pre">--mode</span> <span class="pre">bifurcation</span></code> draws the one-parameter bifurcation diagram of
+<span class="math notranslate nohighlight">\(x\)</span> on the section over <span class="math notranslate nohighlight">\(B \in [0.1, 0.375]\)</span>; the 1-periodic
+point is unstable between the two period doublings.</p>
 </section>
 <section id="forced-alpazur-oscillator">
 <h2>Forced Alpazur oscillator<a class="headerlink" href="#forced-alpazur-oscillator" title="Link to this heading">#</a></h2>
