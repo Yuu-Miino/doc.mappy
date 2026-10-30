@@ -1,6 +1,0 @@
-﻿mappy.TransitionKeyError
-========================
-
-.. currentmodule:: mappy
-
-.. autoexception:: TransitionKeyError

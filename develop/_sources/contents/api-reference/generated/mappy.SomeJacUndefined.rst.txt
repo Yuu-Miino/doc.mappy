@@ -1,6 +1,0 @@
-﻿mappy.SomeJacUndefined
-======================
-
-.. currentmodule:: mappy
-
-.. autoexception:: SomeJacUndefined

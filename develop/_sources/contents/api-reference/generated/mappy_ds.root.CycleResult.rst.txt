@@ -1,0 +1,6 @@
+﻿mappy\_ds.root.CycleResult
+==========================
+
+.. currentmodule:: mappy_ds.root
+
+.. autoclass:: CycleResult

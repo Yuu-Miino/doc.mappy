@@ -1,6 +1,0 @@
-﻿mappy.typing.is\_type\_of
-=========================
-
-.. currentmodule:: mappy.typing
-
-.. autofunction:: is_type_of

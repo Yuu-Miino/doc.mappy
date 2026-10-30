@@ -1,0 +1,6 @@
+﻿mappy\_ds.SymbolicEvaluationError
+=================================
+
+.. currentmodule:: mappy_ds
+
+.. autoexception:: SymbolicEvaluationError

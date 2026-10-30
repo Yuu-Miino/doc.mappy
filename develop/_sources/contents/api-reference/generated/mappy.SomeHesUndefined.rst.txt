@@ -1,6 +1,0 @@
-﻿mappy.SomeHesUndefined
-======================
-
-.. currentmodule:: mappy
-
-.. autoexception:: SomeHesUndefined

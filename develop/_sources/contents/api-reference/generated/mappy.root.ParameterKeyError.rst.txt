@@ -1,6 +1,0 @@
-﻿mappy.root.ParameterKeyError
-============================
-
-.. currentmodule:: mappy.root
-
-.. autoexception:: ParameterKeyError

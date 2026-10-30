@@ -1,0 +1,6 @@
+﻿mappy\_ds.vector\_field
+=======================
+
+.. currentmodule:: mappy_ds
+
+.. autofunction:: vector_field

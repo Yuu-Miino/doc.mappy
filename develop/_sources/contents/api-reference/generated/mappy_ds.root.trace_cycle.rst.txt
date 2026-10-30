@@ -1,0 +1,6 @@
+﻿mappy\_ds.root.trace\_cycle
+===========================
+
+.. currentmodule:: mappy_ds.root
+
+.. autofunction:: trace_cycle

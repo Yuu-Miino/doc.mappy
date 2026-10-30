@@ -1,0 +1,6 @@
+mappy\_ds.ContinuousMode.cod\_dim
+=================================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: ContinuousMode.cod_dim

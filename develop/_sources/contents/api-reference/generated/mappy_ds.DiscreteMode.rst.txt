@@ -1,0 +1,21 @@
+﻿mappy\_ds.DiscreteMode
+======================
+
+.. currentmodule:: mappy_ds
+
+.. autoclass:: DiscreteMode
+
+   .. rubric:: Properties
+
+   .. autosummary::
+      :toctree:
+
+      ~DiscreteMode.cod_dim
+      ~DiscreteMode.dom_dim
+
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+
+      ~DiscreteMode.step

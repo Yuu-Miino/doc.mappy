@@ -1,6 +1,0 @@
-﻿mappy.NextModeNotFoundError
-===========================
-
-.. currentmodule:: mappy
-
-.. autoexception:: NextModeNotFoundError

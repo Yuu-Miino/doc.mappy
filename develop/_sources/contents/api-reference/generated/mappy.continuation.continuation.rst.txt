@@ -1,6 +1,0 @@
-﻿mappy.continuation.continuation
-===============================
-
-.. currentmodule:: mappy.continuation
-
-.. autofunction:: continuation

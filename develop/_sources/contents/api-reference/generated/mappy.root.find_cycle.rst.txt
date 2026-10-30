@@ -1,6 +1,0 @@
-﻿mappy.root.find\_cycle
-======================
-
-.. currentmodule:: mappy.root
-
-.. autofunction:: find_cycle

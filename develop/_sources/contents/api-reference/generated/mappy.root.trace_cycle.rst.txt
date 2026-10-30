@@ -1,6 +1,0 @@
-﻿mappy.root.trace\_cycle
-=======================
-
-.. currentmodule:: mappy.root
-
-.. autofunction:: trace_cycle

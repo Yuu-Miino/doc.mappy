@@ -1,0 +1,6 @@
+﻿mappy\_ds.UnknownModeError
+==========================
+
+.. currentmodule:: mappy_ds
+
+.. autoexception:: UnknownModeError

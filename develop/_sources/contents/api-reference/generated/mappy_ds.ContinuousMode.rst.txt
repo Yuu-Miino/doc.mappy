@@ -1,0 +1,22 @@
+﻿mappy\_ds.ContinuousMode
+========================
+
+.. currentmodule:: mappy_ds
+
+.. autoclass:: ContinuousMode
+
+   .. rubric:: Properties
+
+   .. autosummary::
+      :toctree:
+
+      ~ContinuousMode.border_names
+      ~ContinuousMode.cod_dim
+      ~ContinuousMode.dom_dim
+
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+
+      ~ContinuousMode.step

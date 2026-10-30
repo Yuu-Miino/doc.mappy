@@ -1,6 +1,0 @@
-﻿mappy.typing.YC
-===============
-
-.. currentmodule:: mappy.typing
-
-.. autodata:: YC

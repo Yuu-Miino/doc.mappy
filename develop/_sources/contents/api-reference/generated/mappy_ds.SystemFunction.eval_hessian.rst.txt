@@ -1,0 +1,6 @@
+mappy\_ds.SystemFunction.eval\_hessian
+======================================
+
+.. currentmodule:: mappy_ds
+
+.. automethod:: SystemFunction.eval_hessian

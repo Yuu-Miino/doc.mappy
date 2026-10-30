@@ -1,6 +1,0 @@
-mappy.Mode.step
-===============
-
-.. currentmodule:: mappy
-
-.. automethod:: Mode.step

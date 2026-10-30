@@ -1,0 +1,6 @@
+mappy\_ds.Diffeomorphism.trajectory
+===================================
+
+.. currentmodule:: mappy_ds
+
+.. automethod:: Diffeomorphism.trajectory
