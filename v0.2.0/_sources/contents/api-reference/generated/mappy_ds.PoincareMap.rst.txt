@@ -1,0 +1,23 @@
+﻿mappy\_ds.PoincareMap
+=====================
+
+.. currentmodule:: mappy_ds
+
+.. autoclass:: PoincareMap
+
+   .. rubric:: Properties
+
+   .. autosummary::
+      :toctree:
+
+      ~PoincareMap.dim
+      ~PoincareMap.param_keys
+
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+
+      ~PoincareMap.image
+      ~PoincareMap.image_detail
+      ~PoincareMap.trajectory

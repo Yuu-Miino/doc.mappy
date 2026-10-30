@@ -1,0 +1,6 @@
+mappy\_ds.PoincareMap.param\_keys
+=================================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: PoincareMap.param_keys

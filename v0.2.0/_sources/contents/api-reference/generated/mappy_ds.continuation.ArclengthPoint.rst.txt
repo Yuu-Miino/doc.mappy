@@ -1,0 +1,6 @@
+﻿mappy\_ds.continuation.ArclengthPoint
+=====================================
+
+.. currentmodule:: mappy_ds.continuation
+
+.. autoclass:: ArclengthPoint

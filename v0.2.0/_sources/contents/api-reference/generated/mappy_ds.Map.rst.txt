@@ -1,0 +1,23 @@
+﻿mappy\_ds.Map
+=============
+
+.. currentmodule:: mappy_ds
+
+.. autoclass:: Map
+
+   .. rubric:: Properties
+
+   .. autosummary::
+      :toctree:
+
+      ~Map.dim
+      ~Map.param_keys
+
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+
+      ~Map.image
+      ~Map.image_detail
+      ~Map.trajectory

@@ -1,0 +1,6 @@
+﻿mappy\_ds.plot.plot\_trajectory
+===============================
+
+.. currentmodule:: mappy_ds.plot
+
+.. autofunction:: plot_trajectory

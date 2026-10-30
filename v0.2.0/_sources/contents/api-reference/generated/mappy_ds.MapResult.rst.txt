@@ -1,0 +1,15 @@
+﻿mappy\_ds.MapResult
+===================
+
+.. currentmodule:: mappy_ds
+
+.. autoclass:: MapResult
+
+   .. rubric:: Properties
+
+   .. autosummary::
+      :toctree:
+
+      ~MapResult.eigvals
+      ~MapResult.eigvecs
+      ~MapResult.end_mode

@@ -1,0 +1,21 @@
+﻿mappy\_ds.Mode
+==============
+
+.. currentmodule:: mappy_ds
+
+.. autoclass:: Mode
+
+   .. rubric:: Properties
+
+   .. autosummary::
+      :toctree:
+
+      ~Mode.cod_dim
+      ~Mode.dom_dim
+
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+
+      ~Mode.step

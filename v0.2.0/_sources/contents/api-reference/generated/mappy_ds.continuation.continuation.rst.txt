@@ -1,0 +1,6 @@
+﻿mappy\_ds.continuation.continuation
+===================================
+
+.. currentmodule:: mappy_ds.continuation
+
+.. autofunction:: continuation

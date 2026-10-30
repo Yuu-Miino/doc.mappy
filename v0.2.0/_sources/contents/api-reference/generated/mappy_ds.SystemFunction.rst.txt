@@ -1,0 +1,33 @@
+﻿mappy\_ds.SystemFunction
+========================
+
+.. currentmodule:: mappy_ds
+
+.. autoclass:: SystemFunction
+
+   .. rubric:: Properties
+
+   .. autosummary::
+      :toctree:
+
+      ~SystemFunction.expression
+      ~SystemFunction.hessian_expression
+      ~SystemFunction.jacobian_expression
+      ~SystemFunction.param_keys
+      ~SystemFunction.parameter_jacobian_expression
+
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+
+      ~SystemFunction.__call__
+      ~SystemFunction.eval
+      ~SystemFunction.eval_hessian
+      ~SystemFunction.eval_jacobian
+      ~SystemFunction.eval_parameter_jacobian
+      ~SystemFunction.eval_parameter_jacobian_for
+      ~SystemFunction.hessian
+      ~SystemFunction.jacobian
+      ~SystemFunction.parameter_jacobian
+      ~SystemFunction.params_array

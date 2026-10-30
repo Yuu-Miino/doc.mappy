@@ -1,0 +1,6 @@
+mappy\_ds.MapResult.end\_mode
+=============================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: MapResult.end_mode

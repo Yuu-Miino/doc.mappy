@@ -1,0 +1,6 @@
+mappy\_ds.SystemFunction.hessian
+================================
+
+.. currentmodule:: mappy_ds
+
+.. automethod:: SystemFunction.hessian

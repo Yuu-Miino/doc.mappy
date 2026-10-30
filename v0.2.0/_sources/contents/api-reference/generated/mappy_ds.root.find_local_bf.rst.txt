@@ -1,0 +1,6 @@
+﻿mappy\_ds.root.find\_local\_bf
+==============================
+
+.. currentmodule:: mappy_ds.root
+
+.. autofunction:: find_local_bf

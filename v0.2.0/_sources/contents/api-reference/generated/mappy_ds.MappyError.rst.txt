@@ -1,0 +1,6 @@
+﻿mappy\_ds.MappyError
+====================
+
+.. currentmodule:: mappy_ds
+
+.. autoexception:: MappyError

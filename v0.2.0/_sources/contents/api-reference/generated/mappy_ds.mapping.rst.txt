@@ -1,0 +1,6 @@
+﻿mappy\_ds.mapping
+=================
+
+.. currentmodule:: mappy_ds
+
+.. autofunction:: mapping

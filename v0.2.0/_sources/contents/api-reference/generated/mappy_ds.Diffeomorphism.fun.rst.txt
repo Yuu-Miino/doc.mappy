@@ -1,0 +1,6 @@
+mappy\_ds.Diffeomorphism.fun
+============================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: Diffeomorphism.fun

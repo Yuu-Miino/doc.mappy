@@ -1,0 +1,6 @@
+mappy\_ds.SystemFunction.jacobian\_expression
+=============================================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: SystemFunction.jacobian_expression

@@ -1,0 +1,24 @@
+﻿mappy\_ds.Diffeomorphism
+========================
+
+.. currentmodule:: mappy_ds
+
+.. autoclass:: Diffeomorphism
+
+   .. rubric:: Properties
+
+   .. autosummary::
+      :toctree:
+
+      ~Diffeomorphism.dim
+      ~Diffeomorphism.fun
+      ~Diffeomorphism.param_keys
+
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+
+      ~Diffeomorphism.image
+      ~Diffeomorphism.image_detail
+      ~Diffeomorphism.trajectory
