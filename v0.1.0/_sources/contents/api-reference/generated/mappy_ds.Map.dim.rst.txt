@@ -1,0 +1,6 @@
+mappy\_ds.Map.dim
+=================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: Map.dim

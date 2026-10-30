@@ -1,0 +1,6 @@
+﻿mappy\_ds.continuation.ContinuationStep
+=======================================
+
+.. currentmodule:: mappy_ds.continuation
+
+.. autoclass:: ContinuationStep

@@ -1,0 +1,6 @@
+mappy\_ds.TrajectorySegment.dim
+===============================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: TrajectorySegment.dim

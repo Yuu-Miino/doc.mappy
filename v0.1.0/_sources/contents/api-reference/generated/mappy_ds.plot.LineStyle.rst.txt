@@ -1,0 +1,6 @@
+﻿mappy\_ds.plot.LineStyle
+========================
+
+.. currentmodule:: mappy_ds.plot
+
+.. autoclass:: LineStyle

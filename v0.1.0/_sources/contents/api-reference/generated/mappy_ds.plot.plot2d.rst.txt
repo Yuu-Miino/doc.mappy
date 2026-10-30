@@ -1,0 +1,6 @@
+﻿mappy\_ds.plot.plot2d
+=====================
+
+.. currentmodule:: mappy_ds.plot
+
+.. autofunction:: plot2d

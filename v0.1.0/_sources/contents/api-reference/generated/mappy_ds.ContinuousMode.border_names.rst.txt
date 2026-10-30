@@ -1,0 +1,6 @@
+mappy\_ds.ContinuousMode.border\_names
+======================================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: ContinuousMode.border_names

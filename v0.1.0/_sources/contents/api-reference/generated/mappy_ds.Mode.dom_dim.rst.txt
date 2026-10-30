@@ -1,0 +1,6 @@
+mappy\_ds.Mode.dom\_dim
+=======================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: Mode.dom_dim

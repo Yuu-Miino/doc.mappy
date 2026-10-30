@@ -1,0 +1,6 @@
+﻿mappy\_ds.root.LocalBfResult
+============================
+
+.. currentmodule:: mappy_ds.root
+
+.. autoclass:: LocalBfResult

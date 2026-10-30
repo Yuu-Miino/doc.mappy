@@ -1,0 +1,13 @@
+﻿mappy\_ds.Trajectory
+====================
+
+.. currentmodule:: mappy_ds
+
+.. autoclass:: Trajectory
+
+   .. rubric:: Properties
+
+   .. autosummary::
+      :toctree:
+
+      ~Trajectory.y

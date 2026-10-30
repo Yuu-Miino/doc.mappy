@@ -1,0 +1,6 @@
+mappy\_ds.SystemFunction.params\_array
+======================================
+
+.. currentmodule:: mappy_ds
+
+.. automethod:: SystemFunction.params_array

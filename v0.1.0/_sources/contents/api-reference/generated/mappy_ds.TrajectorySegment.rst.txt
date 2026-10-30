@@ -1,0 +1,13 @@
+﻿mappy\_ds.TrajectorySegment
+===========================
+
+.. currentmodule:: mappy_ds
+
+.. autoclass:: TrajectorySegment
+
+   .. rubric:: Properties
+
+   .. autosummary::
+      :toctree:
+
+      ~TrajectorySegment.dim

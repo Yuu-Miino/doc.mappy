@@ -1,0 +1,6 @@
+mappy\_ds.ContinuousMode.step
+=============================
+
+.. currentmodule:: mappy_ds
+
+.. automethod:: ContinuousMode.step

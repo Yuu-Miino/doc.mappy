@@ -1,0 +1,6 @@
+mappy\_ds.SystemFunction.param\_keys
+====================================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: SystemFunction.param_keys

@@ -1,0 +1,6 @@
+mappy\_ds.ContinuousMode.dom\_dim
+=================================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: ContinuousMode.dom_dim

@@ -1,0 +1,6 @@
+﻿mappy\_ds.ModeNotTerminatedError
+================================
+
+.. currentmodule:: mappy_ds
+
+.. autoexception:: ModeNotTerminatedError

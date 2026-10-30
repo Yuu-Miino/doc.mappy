@@ -1,0 +1,6 @@
+mappy\_ds.Map.trajectory
+========================
+
+.. currentmodule:: mappy_ds
+
+.. automethod:: Map.trajectory

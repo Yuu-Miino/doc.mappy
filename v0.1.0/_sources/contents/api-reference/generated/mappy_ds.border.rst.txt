@@ -1,0 +1,6 @@
+﻿mappy\_ds.border
+================
+
+.. currentmodule:: mappy_ds
+
+.. autofunction:: border

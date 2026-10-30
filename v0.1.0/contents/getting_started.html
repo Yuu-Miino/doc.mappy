@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Getting started &#8212; mappy-ds 0.1.0</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=18bd87630a240e9c25be" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/MapPy.css?v=bbf8f358" />
+  
+  <!-- So that users can add custom icons -->
+  <script defer src="../_static/scripts/fontawesome.js?digest=18bd87630a240e9c25be"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>window.MathJax = {"tex": {"macros": {"bm": ["\\boldsymbol{#1}", 1], "deriv": ["\\frac{d#1}{d#2}", 2], "pderiv": ["\\frac{\\partial#1}{\\partial#2}", 2], "parens": ["\\left(#1\\right)", 1], "braces": ["\\left\\{#1\\right\\}", 1], "brackets": ["\\left[#1\\right]", 1], "set": ["\\braces{#1}", 1], "case": ["\\left\\{#1\\right.", 1], "R": "\\mathbb{R}"}}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/getting_started';</script>
+    <script>
+        DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://yuu-miino.github.io/doc.mappy/latest/_static/switcher.json';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1.0';
+        DOCUMENTATION_OPTIONS.show_version_warning_banner =
+            false;
+        </script>
+    <script>DOCUMENTATION_OPTIONS.search_as_you_type = false;</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="User guide" href="user_guide.html" />
+    <link rel="prev" title="mappy-ds documentation" href="../index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="color-scheme" content="light dark"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="0.1.0" />
+  
+    
+    <script src="../_static/searchtools.js"></script>
+    <script src="../_static/language_data.js"></script>
+    <script src="../searchindex.js"></script>
+  
+  </head>
+  <body data-default-mode="">
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+  
+  
+  
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header id="pst-header" class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+<div class="bd-header__inner bd-page-width">
+  <button type="button" class="pst-navbar-icon sidebar-toggle primary-toggle" aria-label="Site navigation">
+    <span class="fa-solid fa-bars"></span>
+  </button>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="https://miino.sytes.net/figs/089-traj.gif" class="logo__image only-light" alt=""/>
+    <img src="https://miino.sytes.net/figs/089-traj.gif" class="logo__image only-dark pst-js-only" alt=""/>
+  
+  
+    <p class="title logo__title">mappy-ds</p>
+  
+</a></div>
+    
+      <div class="navbar-item">
+<div class="version-switcher__container dropdown pst-js-only">
+  <button id="pst-version-switcher-button-2"
+    type="button"
+    class="version-switcher__button btn btn-sm dropdown-toggle"
+    data-bs-toggle="dropdown"
+    aria-haspopup="listbox"
+    aria-controls="pst-version-switcher-list-2"
+    aria-label="Version switcher list"
+  >
+    Choose version  <!-- this text may get changed later by javascript -->
+    <span class="caret"></span>
+  </button>
+  <div id="pst-version-switcher-list-2"
+    class="version-switcher__menu dropdown-menu list-group-flush py-0"
+    role="listbox" aria-labelledby="pst-version-switcher-button-2">
+    <!-- dropdown will be populated by javascript on page load -->
+  </div>
+</div></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#" aria-current="page">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api-reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Yuu-Miino/mappy" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/mappy-ds/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-custom fa-lg" data-prefix="fa-custom" data-icon="pypi" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+<button type="button" class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button>
+    </div>
+  
+
+  
+    <button type="button" class="pst-navbar-icon sidebar-toggle secondary-toggle" aria-label="On this page">
+      <span class="fa-solid fa-outdent"></span>
+    </button>
+  
+</div>
+
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          
+          
+            <div class="navbar-item">
+<nav>
+  <ul class="bd-navbar-elements navbar-nav">
+    
+<li class="nav-item current active">
+  <a class="nav-link nav-internal" href="#" aria-current="page">
+    Getting started
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="user_guide.html">
+    User guide
+  </a>
+</li>
+
+
+<li class="nav-item ">
+  <a class="nav-link nav-internal" href="api-reference/index.html">
+    API reference
+  </a>
+</li>
+
+  </ul>
+</nav></div>
+          
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<div class="theme-switch-container dropdown pst-js-only" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Color mode">
+  <button type="button" class="btn btn-sm nav-link pst-navbar-icon theme-switch-button dropdown-toggle" aria-label="Color mode" data-bs-toggle="dropdown">
+    <i class="theme-switch fa-solid fa-sun fa-lg fa-fw" data-mode="light" title="Light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg fa-fw" data-mode="dark" title="Dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg fa-fw" data-mode="auto" title="System Settings"></i>
+  </button>
+  <ul class="dropdown-menu dropdown-menu-end">
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg fa-fw me-1"></i>System Settings</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="light"><i class="fa-solid fa-sun fa-lg fa-fw me-1"></i>Light</button></li>
+    <li><button type="button" class="dropdown-item d-flex align-items-center theme-change-button" data-mode="dark"><i class="fa-solid fa-moon fa-lg fa-fw me-1"></i>Dark</button></li>
+  </ul>
+</div></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/Yuu-Miino/mappy" title="GitHub" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i><span class="visually-hidden">GitHub</span></a>
+        </li>
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://pypi.org/project/mappy-ds/" title="PyPI" class="nav-link pst-navbar-icon" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><i class="fa-custom fa-lg" data-prefix="fa-custom" data-icon="pypi" aria-hidden="true"></i><span class="visually-hidden">PyPI</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+        <div class="sidebar-primary-item">
+
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"></div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+<nav aria-label="Breadcrumb" class="d-print-none">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    <li class="breadcrumb-item active" aria-current="page"><span class="ellipsis">Getting started</span></li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="getting-started">
+<span id="id1"></span><h1>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">#</a></h2>
+<p>mappy-ds requires Python 3.11 or newer and depends on NumPy, SciPy and SymPy.
+Install it from PyPI:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>mappy-ds
+</pre></div>
+</div>
+<p>The plotting helpers in <a class="reference internal" href="api-reference/plot.html#module-mappy_ds.plot" title="mappy_ds.plot"><code class="xref py py-mod docutils literal notranslate"><span class="pre">mappy_ds.plot</span></code></a> additionally need matplotlib,
+which is pulled in by the <code class="docutils literal notranslate"><span class="pre">plot</span></code> extra:</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span><span class="s2">"mappy-ds[plot]"</span>
+</pre></div>
+</div>
+<p>The import name is <code class="docutils literal notranslate"><span class="pre">mappy_ds</span></code>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">mappy_ds</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">mappy_ds</span><span class="o">.</span><span class="n">__version__</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Do not <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">mappy</span></code>: that PyPI name belongs to an unrelated
+project.</p>
+</div>
+</section>
+<section id="a-five-minute-tutorial">
+<h2>A five-minute tutorial<a class="headerlink" href="#a-five-minute-tutorial" title="Link to this heading">#</a></h2>
+<p>We build the Poincaré map of the Izhikevich spiking-neuron model, evaluate it
+with its derivatives, find its fixed point and follow the fixed point along a
+parameter. The code on this page is executed when the documentation is built.</p>
+<section id="the-model">
+<h3>The model<a class="headerlink" href="#the-model" title="Link to this heading">#</a></h3>
+<p>The Izhikevich neuron has a membrane potential <span class="math notranslate nohighlight">\(v\)</span> and a recovery
+variable <span class="math notranslate nohighlight">\(u\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\deriv{v}{t} = 0.04 v^2 + 5 v + 140 - u + I, \qquad
+\deriv{u}{t} = a (b v - u),\]</div>
+<p>and fires when <span class="math notranslate nohighlight">\(v\)</span> reaches <span class="math notranslate nohighlight">\(30\)</span>; the state then jumps to</p>
+<div class="math notranslate nohighlight">
+\[v \leftarrow c, \qquad u \leftarrow u + d.\]</div>
+<p>The flow is smooth and the jump is smooth, but the system as a whole is not.
+mappy-ds treats each smooth piece as a <em>mode</em> and composes them. As the
+Poincaré section we take the firing threshold <span class="math notranslate nohighlight">\(v = 30\)</span> itself: the state
+on the section is described by <span class="math notranslate nohighlight">\(u\)</span> alone, so the Poincaré map is a
+one-dimensional map <span class="math notranslate nohighlight">\(u_k \mapsto u_{k+1}\)</span> from one spike to the next.</p>
+</section>
+<section id="step-1-the-vector-field">
+<h3>Step 1 — the vector field<a class="headerlink" href="#step-1-the-vector-field" title="Link to this heading">#</a></h3>
+<p>A vector field is a plain Python function <code class="docutils literal notranslate"><span class="pre">f(y,</span> <span class="pre">p)</span></code> of the state <code class="docutils literal notranslate"><span class="pre">y</span></code> and a
+parameter mapping <code class="docutils literal notranslate"><span class="pre">p</span></code>, decorated with <a class="reference internal" href="api-reference/generated/mappy_ds.vector_field.html#mappy_ds.vector_field" title="mappy_ds.vector_field"><code class="xref py py-func docutils literal notranslate"><span class="pre">vector_field()</span></code></a>. The
+decorator needs the state dimension and the names of the parameters the
+function reads:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">mappy_ds</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span><span class="n">ContinuousMode</span><span class="p">,</span> <span class="n">DiscreteMode</span><span class="p">,</span> <span class="n">PoincareMap</span><span class="p">,</span>
+                      <span class="n">border</span><span class="p">,</span> <span class="n">mapping</span><span class="p">,</span> <span class="n">vector_field</span><span class="p">)</span>
+
+<span class="nd">@vector_field</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">izhikevich</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+    <span class="n">v</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">y</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mf">0.04</span> <span class="o">*</span> <span class="n">v</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">v</span> <span class="o">+</span> <span class="mi">140</span> <span class="o">-</span> <span class="n">u</span> <span class="o">+</span> <span class="n">p</span><span class="p">[</span><span class="s2">"I"</span><span class="p">],</span>
+                     <span class="n">p</span><span class="p">[</span><span class="s2">"a"</span><span class="p">]</span> <span class="o">*</span> <span class="p">(</span><span class="n">p</span><span class="p">[</span><span class="s2">"b"</span><span class="p">]</span> <span class="o">*</span> <span class="n">v</span> <span class="o">-</span> <span class="n">u</span><span class="p">)])</span>
+</pre></div>
+</div>
+<p>The function is traced once with SymPy symbols; that is how its Jacobian and
+Hessian are obtained (see <a class="reference internal" href="user_guide/derivatives.html"><span class="doc">Jacobian and Hessian tensor</span></a>). Write it with
+arithmetic operators and SymPy functions (<code class="docutils literal notranslate"><span class="pre">sympy.cos</span></code>, not <code class="docutils literal notranslate"><span class="pre">numpy.cos</span></code>).</p>
+</section>
+<section id="step-2-the-border">
+<h3>Step 2 — the border<a class="headerlink" href="#step-2-the-border" title="Link to this heading">#</a></h3>
+<p>A continuous mode integrates the vector field until a <em>border</em> function
+crosses zero. Firing happens when <span class="math notranslate nohighlight">\(v - 30\)</span> crosses zero from below,
+which is the default direction (<code class="docutils literal notranslate"><span class="pre">direction=1</span></code>) of <a class="reference internal" href="api-reference/generated/mappy_ds.border.html#mappy_ds.border" title="mappy_ds.border"><code class="xref py py-func docutils literal notranslate"><span class="pre">border()</span></code></a>:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@border</span><span class="p">(</span><span class="n">dim</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">fire</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="mi">30</span>
+</pre></div>
+</div>
+</section>
+<section id="step-3-the-jump">
+<h3>Step 3 — the jump<a class="headerlink" href="#step-3-the-jump" title="Link to this heading">#</a></h3>
+<p>Discrete maps are declared with <a class="reference internal" href="api-reference/generated/mappy_ds.mapping.html#mappy_ds.mapping" title="mappy_ds.mapping"><code class="xref py py-func docutils literal notranslate"><span class="pre">mapping()</span></code></a>. On the threshold
+<span class="math notranslate nohighlight">\(v = 30\)</span>, the reset <span class="math notranslate nohighlight">\((v, u) \mapsto (c, u + d)\)</span> is a translation:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@mapping</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">firing</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">y</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="n">p</span><span class="p">[</span><span class="s2">"c"</span><span class="p">]</span> <span class="o">-</span> <span class="mi">30</span><span class="p">,</span> <span class="n">p</span><span class="p">[</span><span class="s2">"d"</span><span class="p">]])</span>
+</pre></div>
+</div>
+</section>
+<section id="step-4-reducing-to-the-section">
+<h3>Step 4 — reducing to the section<a class="headerlink" href="#step-4-reducing-to-the-section" title="Link to this heading">#</a></h3>
+<p>The Poincaré map should act on the section coordinate <span class="math notranslate nohighlight">\(u\)</span> only. Two more
+discrete maps change the dimension: <code class="docutils literal notranslate"><span class="pre">reduce</span></code> projects
+<span class="math notranslate nohighlight">\(\R^2 \to \R\)</span> and <code class="docutils literal notranslate"><span class="pre">revert</span></code> embeds <span class="math notranslate nohighlight">\(u\)</span> back into the plane at
+<span class="math notranslate nohighlight">\(v = 30\)</span>. <code class="docutils literal notranslate"><span class="pre">mapping(dom_dim,</span> <span class="pre">cod_dim)</span></code> takes the two dimensions:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nd">@mapping</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">reduce</span><span class="p">(</span><span class="n">y</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">@</span> <span class="n">y</span>
+
+<span class="nd">@mapping</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">revert</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">_</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">u</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">30</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</section>
+<section id="step-5-modes-and-transitions">
+<h3>Step 5 — modes and transitions<a class="headerlink" href="#step-5-modes-and-transitions" title="Link to this heading">#</a></h3>
+<p>A <a class="reference internal" href="api-reference/generated/mappy_ds.ContinuousMode.html#mappy_ds.ContinuousMode" title="mappy_ds.ContinuousMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuousMode</span></code></a> wraps a vector field and its borders; a
+<a class="reference internal" href="api-reference/generated/mappy_ds.DiscreteMode.html#mappy_ds.DiscreteMode" title="mappy_ds.DiscreteMode"><code class="xref py py-class docutils literal notranslate"><span class="pre">DiscreteMode</span></code></a> wraps a map. Every mode has a unique name.
+The <em>transitions</em> say which mode follows which: a discrete mode has one
+successor (a string), a continuous mode has one successor per border (a
+list, in the order of <code class="docutils literal notranslate"><span class="pre">borders</span></code>):</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">modes</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="n">ContinuousMode</span><span class="p">(</span><span class="s2">"A"</span><span class="p">,</span> <span class="n">izhikevich</span><span class="p">,</span> <span class="n">borders</span><span class="o">=</span><span class="p">[</span><span class="n">fire</span><span class="p">]),</span>
+    <span class="n">DiscreteMode</span><span class="p">(</span><span class="s2">"B"</span><span class="p">,</span> <span class="n">firing</span><span class="p">),</span>
+    <span class="n">DiscreteMode</span><span class="p">(</span><span class="s2">"P"</span><span class="p">,</span> <span class="n">reduce</span><span class="p">),</span>
+    <span class="n">DiscreteMode</span><span class="p">(</span><span class="s2">"Pinv"</span><span class="p">,</span> <span class="n">revert</span><span class="p">),</span>
+<span class="p">]</span>
+<span class="n">transitions</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"A"</span><span class="p">:</span> <span class="p">[</span><span class="s2">"P"</span><span class="p">],</span> <span class="s2">"B"</span><span class="p">:</span> <span class="s2">"A"</span><span class="p">,</span> <span class="s2">"P"</span><span class="p">:</span> <span class="s2">"Pinv"</span><span class="p">,</span> <span class="s2">"Pinv"</span><span class="p">:</span> <span class="s2">"B"</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>The resulting mode graph is a single loop:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Pinv ──▶ B ──▶ A ──(fire)──▶ P ──▶ Pinv
+(u ↦ (30, u))   (reset)  (flow)   ((v, u) ↦ u)
+</pre></div>
+</div>
+</section>
+<section id="step-6-the-poincare-map">
+<h3>Step 6 — the Poincaré map<a class="headerlink" href="#step-6-the-poincare-map" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="api-reference/generated/mappy_ds.PoincareMap.html#mappy_ds.PoincareMap" title="mappy_ds.PoincareMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">PoincareMap</span></code></a> starts in <code class="docutils literal notranslate"><span class="pre">initial_mode</span></code> and follows the
+transitions until it reaches an <em>end mode</em> (by default the initial mode
+again). That is one iteration of the map:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pmap</span> <span class="o">=</span> <span class="n">PoincareMap</span><span class="p">(</span><span class="n">modes</span><span class="p">,</span> <span class="n">transitions</span><span class="p">,</span> <span class="n">initial_mode</span><span class="o">=</span><span class="s2">"Pinv"</span><span class="p">)</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"a"</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s2">"b"</span><span class="p">:</span> <span class="mf">0.2</span><span class="p">,</span> <span class="s2">"c"</span><span class="p">:</span> <span class="o">-</span><span class="mf">50.0</span><span class="p">,</span> <span class="s2">"d"</span><span class="p">:</span> <span class="mf">2.0</span><span class="p">,</span> <span class="s2">"I"</span><span class="p">:</span> <span class="mf">10.0</span><span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="step-7-evaluating-the-map">
+<h3>Step 7 — evaluating the map<a class="headerlink" href="#step-7-evaluating-the-map" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="api-reference/generated/mappy_ds.PoincareMap.image_detail.html#mappy_ds.PoincareMap.image_detail" title="mappy_ds.PoincareMap.image_detail"><code class="xref py py-meth docutils literal notranslate"><span class="pre">image_detail()</span></code></a> returns a
+<a class="reference internal" href="api-reference/generated/mappy_ds.MapResult.html#mappy_ds.MapResult" title="mappy_ds.MapResult"><code class="xref py py-class docutils literal notranslate"><span class="pre">MapResult</span></code></a> holding the image, the Jacobian matrix (computed
+by default) and, on request, the Hessian tensor:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">pmap</span><span class="o">.</span><span class="n">image_detail</span><span class="p">(</span><span class="o">-</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">hessian</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="o">.</span><span class="n">y</span>
+<span class="go">array([-3.47838496])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="o">.</span><span class="n">jac</span>            <span class="c1"># jac[i, j] = ∂y_i / ∂y0_j</span>
+<span class="go">array([[0.27080374]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="o">.</span><span class="n">hes</span>            <span class="c1"># hes[i, j, k] = ∂²y_i / ∂y0_j ∂y0_k</span>
+<span class="go">array([[[-0.19325909]]])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="o">.</span><span class="n">mode_history</span>
+<span class="go">['Pinv', 'B', 'A', 'P', 'Pinv']</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="o">.</span><span class="n">eigvals</span>        <span class="c1"># eigenvalues of jac (characteristic multipliers)</span>
+<span class="go">array([0.27080374+0.j])</span>
+</pre></div>
+</div>
+<p>The scalar input <code class="docutils literal notranslate"><span class="pre">-3.0</span></code> was promoted to a state of length one. The
+<code class="docutils literal notranslate"><span class="pre">mode_history</span></code> lists every mode visited, from the initial mode to the end
+mode. For the image only, use <code class="docutils literal notranslate"><span class="pre">pmap.image(y0,</span> <span class="pre">params,</span> <span class="pre">n=...)</span></code>; for several
+iterations pass <code class="docutils literal notranslate"><span class="pre">n</span></code>.</p>
+</section>
+<section id="step-8-the-fixed-point">
+<h3>Step 8 — the fixed point<a class="headerlink" href="#step-8-the-fixed-point" title="Link to this heading">#</a></h3>
+<p>A periodic point solves <span class="math notranslate nohighlight">\(T^n(u) = u\)</span>. <a class="reference internal" href="api-reference/generated/mappy_ds.root.find_cycle.html#mappy_ds.root.find_cycle" title="mappy_ds.root.find_cycle"><code class="xref py py-func docutils literal notranslate"><span class="pre">find_cycle()</span></code></a>
+solves it with <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.root.html#scipy.optimize.root" title="(in SciPy v1.18.0)"><code class="xref py py-func docutils literal notranslate"><span class="pre">scipy.optimize.root()</span></code></a>, using the analytic Jacobian of the
+map:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">mappy_ds.root</span><span class="w"> </span><span class="kn">import</span> <span class="n">find_cycle</span><span class="p">,</span> <span class="n">trace_cycle</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cycle</span> <span class="o">=</span> <span class="n">find_cycle</span><span class="p">(</span><span class="n">pmap</span><span class="p">,</span> <span class="o">-</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">params</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">cycle</span><span class="o">.</span><span class="n">success</span><span class="p">,</span> <span class="n">cycle</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">cycle</span><span class="o">.</span><span class="n">eigvals</span>
+<span class="go">(True, array([-3.71591625]), array([0.38565236+0.j]))</span>
+</pre></div>
+</div>
+<p>The multiplier <span class="math notranslate nohighlight">\(\mu \approx 0.38566\)</span> lies inside the unit circle, so the
+periodic spiking is stable.</p>
+</section>
+<section id="step-9-continuation">
+<h3>Step 9 — continuation<a class="headerlink" href="#step-9-continuation" title="Link to this heading">#</a></h3>
+<p><a class="reference internal" href="api-reference/generated/mappy_ds.root.trace_cycle.html#mappy_ds.root.trace_cycle" title="mappy_ds.root.trace_cycle"><code class="xref py py-func docutils literal notranslate"><span class="pre">trace_cycle()</span></code></a> sweeps a parameter linearly and calls
+<a class="reference internal" href="api-reference/generated/mappy_ds.root.find_cycle.html#mappy_ds.root.find_cycle" title="mappy_ds.root.find_cycle"><code class="xref py py-func docutils literal notranslate"><span class="pre">find_cycle()</span></code></a> at each value, starting from the previous
+solution. Each step is a <a class="reference internal" href="api-reference/generated/mappy_ds.continuation.ContinuationStep.html#mappy_ds.continuation.ContinuationStep" title="mappy_ds.continuation.ContinuationStep"><code class="xref py py-class docutils literal notranslate"><span class="pre">ContinuationStep</span></code></a> with
+<code class="docutils literal notranslate"><span class="pre">y</span></code>, <code class="docutils literal notranslate"><span class="pre">params</span></code> and <code class="docutils literal notranslate"><span class="pre">info</span></code> (multipliers etc.):</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">steps</span> <span class="o">=</span> <span class="n">trace_cycle</span><span class="p">(</span><span class="n">pmap</span><span class="p">,</span> <span class="n">cycle</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="s2">"I"</span><span class="p">,</span> <span class="mf">5.0</span><span class="p">,</span> <span class="n">resolution</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">steps</span><span class="p">[::</span><span class="mi">2</span><span class="p">]:</span>
+<span class="gp">... </span>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'I = </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">params</span><span class="p">[</span><span class="s2">"I"</span><span class="p">]</span><span class="si">:</span><span class="s1">4.1f</span><span class="si">}</span><span class="s1">  u* = </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">:</span><span class="s1">8.5f</span><span class="si">}</span><span class="s1">  '</span>
+<span class="gp">... </span>          <span class="sa">f</span><span class="s1">'mu = </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">info</span><span class="p">[</span><span class="s2">"eigvals"</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">real</span><span class="si">:</span><span class="s1">+.5f</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+<span class="go">I = 10.0  u* = -3.71592  mu = +0.38565</span>
+<span class="go">I =  9.0  u* = -4.16172  mu = +0.31666</span>
+<span class="go">I =  8.0  u* = -4.64542  mu = +0.22196</span>
+<span class="go">I =  7.0  u* = -5.17810  mu = +0.08191</span>
+<span class="go">I =  6.0  u* = -5.77689  mu = -0.15065</span>
+<span class="go">I =  5.0  u* = -6.47001  mu = -0.62295</span>
+</pre></div>
+</div>
+<p>The multiplier decreases towards <span class="math notranslate nohighlight">\(-1\)</span> as <span class="math notranslate nohighlight">\(I\)</span> decreases: a
+period-doubling bifurcation is ahead. Locating and following it is the topic
+of <a class="reference internal" href="user_guide/root_and_continuation.html"><span class="doc">Periodic points, bifurcations, continuation</span></a>.</p>
+</section>
+<section id="step-10-plotting">
+<h3>Step 10 — plotting<a class="headerlink" href="#step-10-plotting" title="Link to this heading">#</a></h3>
+<p>With matplotlib installed, <a class="reference internal" href="api-reference/generated/mappy_ds.plot.plot_trajectory.html#mappy_ds.plot.plot_trajectory" title="mappy_ds.plot.plot_trajectory"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot_trajectory()</span></code></a> draws a
+<a class="reference internal" href="api-reference/generated/mappy_ds.Trajectory.html#mappy_ds.Trajectory" title="mappy_ds.Trajectory"><code class="xref py py-class docutils literal notranslate"><span class="pre">Trajectory</span></code></a> on an Axes. Modes contribute trajectory
+segments if <code class="docutils literal notranslate"><span class="pre">in_trajectory</span></code> is true (the default for continuous modes);
+here the reset <code class="docutils literal notranslate"><span class="pre">B</span></code> is also included so that the jumps appear as straight
+lines:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mappy_ds.plot</span><span class="w"> </span><span class="kn">import</span> <span class="n">LineStyle</span><span class="p">,</span> <span class="n">plot_trajectory</span>
+
+<span class="n">modes</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">DiscreteMode</span><span class="p">(</span><span class="s2">"B"</span><span class="p">,</span> <span class="n">firing</span><span class="p">,</span> <span class="n">in_trajectory</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pmap</span> <span class="o">=</span> <span class="n">PoincareMap</span><span class="p">(</span><span class="n">modes</span><span class="p">,</span> <span class="n">transitions</span><span class="p">,</span> <span class="n">initial_mode</span><span class="o">=</span><span class="s2">"Pinv"</span><span class="p">)</span>
+
+<span class="n">traj</span> <span class="o">=</span> <span class="n">pmap</span><span class="o">.</span><span class="n">trajectory</span><span class="p">(</span><span class="n">cycle</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">ax</span> <span class="o">=</span> <span class="n">plot_trajectory</span><span class="p">(</span><span class="n">traj</span><span class="p">,</span> <span class="n">styles</span><span class="o">=</span><span class="p">{</span><span class="s2">"A"</span><span class="p">:</span> <span class="n">LineStyle</span><span class="p">(</span><span class="s2">"tab:blue"</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">),</span>
+                                   <span class="s2">"B"</span><span class="p">:</span> <span class="n">LineStyle</span><span class="p">(</span><span class="s2">"tab:orange"</span><span class="p">,</span> <span class="mf">1.0</span><span class="p">)})</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">"v"</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">"u"</span><span class="p">)</span>
+</pre></div>
+</div>
+<figure class="align-default">
+<img alt="../_images/getting_started-10.png" class="plot-directive" src="../_images/getting_started-10.png" />
+</figure>
+<p>For interactive exploration, <a class="reference internal" href="api-reference/generated/mappy_ds.plot.plot2d.html#mappy_ds.plot.plot2d" title="mappy_ds.plot.plot2d"><code class="xref py py-func docutils literal notranslate"><span class="pre">plot2d()</span></code></a> iterates a map
+forever, draws each iteration and lets you click new initial points and
+change parameters from the keyboard:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">mappy_ds.plot</span><span class="w"> </span><span class="kn">import</span> <span class="n">PlotConfig</span><span class="p">,</span> <span class="n">plot2d</span>
+
+<span class="n">plot2d</span><span class="p">(</span><span class="n">pmap</span><span class="p">,</span> <span class="n">cycle</span><span class="o">.</span><span class="n">y</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span>
+       <span class="n">PlotConfig</span><span class="p">(</span><span class="n">xlim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="mi">40</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="p">(</span><span class="o">-</span><span class="mi">12</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> <span class="n">xlabel</span><span class="o">=</span><span class="s2">"v"</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s2">"u"</span><span class="p">,</span>
+                  <span class="n">param_keys</span><span class="o">=</span><span class="p">[</span><span class="s2">"I"</span><span class="p">,</span> <span class="s2">"a"</span><span class="p">],</span> <span class="n">scalar_axis</span><span class="o">=</span><span class="s2">"y"</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="user_guide/plotting.html"><span class="doc">Plotting</span></a> for the controls.</p>
+</section>
+</section>
+<section id="next-steps">
+<h2>Next steps<a class="headerlink" href="#next-steps" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><a class="reference internal" href="user_guide/concept_of_modes.html"><span class="doc">Concept of modes</span></a> explains modes, borders and transitions
+in depth.</p></li>
+<li><p><a class="reference internal" href="user_guide/working_examples.html"><span class="doc">Working examples</span></a> lists the example scripts shipped in the
+repository.</p></li>
+<li><p>The <a class="reference internal" href="api-reference/index.html#api-reference"><span class="std std-ref">API reference</span></a> documents every public object.</p></li>
+</ul>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">mappy-ds documentation</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="user_guide.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">User guide</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="pst-show_toc_level nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#installation">Installation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-five-minute-tutorial">A five-minute tutorial</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#the-model">The model</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-the-vector-field">Step 1 — the vector field</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-the-border">Step 2 — the border</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-the-jump">Step 3 — the jump</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-reducing-to-the-section">Step 4 — reducing to the section</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-modes-and-transitions">Step 5 — modes and transitions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6-the-poincare-map">Step 6 — the Poincaré map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-7-evaluating-the-map">Step 7 — evaluating the map</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-8-the-fixed-point">Step 8 — the fixed point</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-9-continuation">Step 9 — continuation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-10-plotting">Step 10 — plotting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#next-steps">Next steps</a></li>
+</ul>
+  </nav></div>
+
+  <div class="sidebar-secondary-item">
+
+  <div class="tocsection sourcelink">
+    <a href="../_sources/contents/getting_started.rst.txt">
+      <i class="fa-solid fa-file-lines"></i> Show Source
+    </a>
+  </div>
+</div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be"></script>
+<script defer src="../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright 2023–2026, Yuu Miino.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 9.2.0.
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  <!-- # L10n: Setting the PST URL as an argument as this does not need to be localized -->
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.23.0.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>
