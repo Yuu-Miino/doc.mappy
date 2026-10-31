@@ -1,0 +1,6 @@
+mappy\_ds.SystemFunction.parameter\_jacobian
+============================================
+
+.. currentmodule:: mappy_ds
+
+.. automethod:: SystemFunction.parameter_jacobian

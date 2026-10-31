@@ -12,6 +12,7 @@
 
       ~Diffeomorphism.dim
       ~Diffeomorphism.fun
+      ~Diffeomorphism.param_keys
 
    .. rubric:: Methods
 

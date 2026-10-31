@@ -11,6 +11,7 @@
       :toctree:
 
       ~Map.dim
+      ~Map.param_keys
 
    .. rubric:: Methods
 

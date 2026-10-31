@@ -11,6 +11,7 @@
       :toctree:
 
       ~PoincareMap.dim
+      ~PoincareMap.param_keys
 
    .. rubric:: Methods
 

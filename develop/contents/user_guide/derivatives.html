@@ -7,7 +7,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Jacobian and Hessian tensor &#8212; mappy-ds 0.1.0</title>
+    <title>Jacobian and Hessian tensor &#8212; mappy-ds 0.2.0</title>
   
   
   
@@ -40,7 +40,7 @@
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=18bd87630a240e9c25be" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=18bd87630a240e9c25be" />
 
-    <script src="../../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../../_static/documentation_options.js?v=938c9ccc"></script>
     <script src="../../_static/doctools.js?v=fd6eb6e6"></script>
     <script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="../../_static/design-tabs.js?v=f930bc37"></script>
@@ -50,7 +50,7 @@
     <script>
         DOCUMENTATION_OPTIONS.theme_version = '0.23.0';
         DOCUMENTATION_OPTIONS.theme_switcher_json_url = 'https://yuu-miino.github.io/doc.mappy/latest/_static/switcher.json';
-        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.1.0';
+        DOCUMENTATION_OPTIONS.theme_switcher_version_match = '0.2.0';
         DOCUMENTATION_OPTIONS.show_version_warning_banner =
             false;
         </script>
@@ -62,7 +62,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="color-scheme" content="light dark"/>
   <meta name="docsearch:language" content="en"/>
-  <meta name="docsearch:version" content="0.1.0" />
+  <meta name="docsearch:version" content="0.2.0" />
   
     
     <script src="../../_static/searchtools.js"></script>
@@ -603,6 +603,76 @@ the Jacobian and (18)–(22) for the Hessian), written with the index
 convention above.</p>
 </section>
 </section>
+<section id="parameter-derivatives">
+<h2>Parameter derivatives<a class="headerlink" href="#parameter-derivatives" title="Link to this heading">#</a></h2>
+<p>Pass <code class="docutils literal notranslate"><span class="pre">parameter_jacobian=True</span></code> to <a class="reference internal" href="../api-reference/generated/mappy_ds.Map.image_detail.html#mappy_ds.Map.image_detail" title="mappy_ds.Map.image_detail"><code class="xref py py-meth docutils literal notranslate"><span class="pre">image_detail()</span></code></a> to
+obtain <code class="xref py py-attr docutils literal notranslate"><span class="pre">MapResult.jac_p</span></code>, the derivative of
+the image with respect to the parameters: <code class="docutils literal notranslate"><span class="pre">jac_p[i,</span> <span class="pre">m]</span> <span class="pre">=</span> <span class="pre">∂y_i/∂p_m</span></code>, with
+<code class="docutils literal notranslate"><span class="pre">m</span></code> indexing <a class="reference internal" href="../api-reference/generated/mappy_ds.Map.param_keys.html#mappy_ds.Map.param_keys" title="mappy_ds.Map.param_keys"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Map.param_keys</span></code></a> — every
+parameter read by any mode or border of the map, in order of appearance. The
+derivative with respect to the system parameters is what parameter
+continuation and the detection of bifurcations need; the sections above give
+derivatives with respect to the state only.</p>
+<p>For a discrete mode the parameter Jacobian <span class="math notranslate nohighlight">\(\partial_p f\)</span> comes
+straight from SymPy. For a continuous mode the sensitivity
+<span class="math notranslate nohighlight">\(P = \partial\varphi/\partial p\)</span> of the flow obeys</p>
+<div class="math notranslate nohighlight">
+\[\deriv{P}{t} = \pderiv{\bm f}{\bm x}\parens{\varphi}\, P
+               + \pderiv{\bm f}{p}\parens{\varphi}, \qquad P(0) = 0,\]</div>
+<p>which is integrated together with the state. At a border
+<span class="math notranslate nohighlight">\(q(\bm x, p) = 0\)</span> the hitting time depends on the parameters too, both
+through the trajectory and through the border itself, and the mode map
+<span class="math notranslate nohighlight">\(\bm x_0 \mapsto \varphi(\tau(\bm x_0, p), \bm x_0, p)\)</span> has</p>
+<div class="math notranslate nohighlight">
+\[\pderiv{T}{p} = B\, P(\tau) - \frac{\bm f(\bm x_1)}{\nabla q \cdot \bm f(\bm x_1)}
+                \otimes \pderiv{q}{p}(\bm x_1, p),\]</div>
+<p>with the same <span class="math notranslate nohighlight">\(B\)</span> as in the border correction above. Compositions
+follow the chain rule <span class="math notranslate nohighlight">\(\partial_p (g \circ f) = Dg\, \partial_p f +
+\partial_p g\)</span>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">pmap</span><span class="o">.</span><span class="n">image_detail</span><span class="p">(</span><span class="o">-</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">parameter_jacobian</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="o">.</span><span class="n">param_keys</span>
+<span class="go">('I', 'a', 'b', 'c', 'd')</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">res</span><span class="o">.</span><span class="n">jac_p</span><span class="o">.</span><span class="n">shape</span>
+<span class="go">(1, 5)</span>
+</pre></div>
+</div>
+</section>
+<section id="mixed-derivatives">
+<h2>Mixed derivatives<a class="headerlink" href="#mixed-derivatives" title="Link to this heading">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">parameter_hessian=True</span></code> additionally returns <code class="xref py py-attr docutils literal notranslate"><span class="pre">MapResult.hes_p</span></code>, the mixed second derivative
+<code class="docutils literal notranslate"><span class="pre">hes_p[i,</span> <span class="pre">j,</span> <span class="pre">m]</span> <span class="pre">=</span> <span class="pre">∂²y_i/(∂y0_j</span> <span class="pre">∂p_m)</span></code> — the derivative of the Jacobian with
+respect to the parameters. It is what the Jacobian of a bifurcation condition
+needs (the conditions involve <span class="math notranslate nohighlight">\(DT^n\)</span>, so their parameter derivative
+involves <span class="math notranslate nohighlight">\(\partial_p DT^n\)</span>), and what makes
+<a class="reference internal" href="../api-reference/generated/mappy_ds.root.find_local_bf.html#mappy_ds.root.find_local_bf" title="mappy_ds.root.find_local_bf"><code class="xref py py-func docutils literal notranslate"><span class="pre">find_local_bf()</span></code></a> fully analytic.</p>
+<p>For a continuous mode the sensitivity of the flow Jacobian,
+<span class="math notranslate nohighlight">\(M = \partial^2\varphi/\partial\bm x_0\,\partial p\)</span>, obeys</p>
+<div class="math notranslate nohighlight">
+\[\deriv{M_{ijm}}{t} = \sum_{l,r} (D^2 f)_{ilr} J_{lj} P_{rm}
+                   + \sum_l (\partial_p Df)_{ilm} J_{lj}
+                   + \sum_l (Df)_{il} M_{ljm}, \qquad M(0) = 0,\]</div>
+<p>integrated with the state, and at a border the parameter derivative
+<span class="math notranslate nohighlight">\(\partial_p T = B P + G\)</span>, <span class="math notranslate nohighlight">\(G = -\bm f \otimes \partial_p q / s\)</span>,
+is differentiated once more with respect to <span class="math notranslate nohighlight">\(\bm x_0\)</span>. Every quantity
+evaluated at the hitting point <span class="math notranslate nohighlight">\(\bm x_1\)</span> depends on <span class="math notranslate nohighlight">\(\bm x_0\)</span>
+through the mode Jacobian <span class="math notranslate nohighlight">\(J_T = B J\)</span>, and <span class="math notranslate nohighlight">\(P(\tau)\)</span> also through
+<span class="math notranslate nohighlight">\(\tau\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\pderiv{(\partial_p T)}{\bm x_0}
+= \parens{\pderiv{B}{\bm x} J_T} P
++ B \brackets{ M + \parens{Df\, P + \partial_p \bm f} \otimes \pderiv{\tau}{\bm x_0} }
++ \parens{\pderiv{G}{\bm x} J_T},
+\qquad
+\pderiv{G}{\bm x} = -\frac{Df \otimes \partial_p q + \bm f \otimes \partial^2_{\bm x p} q}{s}
+                    + \frac{(\bm f \otimes \partial_p q) \otimes \partial_{\bm x} s}{s^2},\]</div>
+<p>with <span class="math notranslate nohighlight">\(\partial B/\partial\bm x\)</span> as in the border correction above. The
+last term vanishes for borders that do not depend on the parameters.
+Compositions follow <span class="math notranslate nohighlight">\(\partial_p D(g \circ f) = D^2 g\,[Df, \partial_p f]
++ (\partial_p Dg)\, Df + Dg\, \partial_p Df\)</span>.</p>
+<p><a class="reference internal" href="../api-reference/generated/mappy_ds.root.find_local_bf.html#mappy_ds.root.find_local_bf" title="mappy_ds.root.find_local_bf"><code class="xref py py-func docutils literal notranslate"><span class="pre">find_local_bf()</span></code></a> uses <code class="docutils literal notranslate"><span class="pre">jac</span></code>, <code class="docutils literal notranslate"><span class="pre">hes</span></code>, <code class="docutils literal notranslate"><span class="pre">jac_p</span></code> and
+<code class="docutils literal notranslate"><span class="pre">hes_p</span></code> to supply the root finder with a fully analytic Jacobian of the
+bifurcation conditions.</p>
+</section>
 <section id="composition">
 <h2>Composition<a class="headerlink" href="#composition" title="Link to this heading">#</a></h2>
 <p>One iteration of a <a class="reference internal" href="../api-reference/generated/mappy_ds.PoincareMap.html#mappy_ds.PoincareMap" title="mappy_ds.PoincareMap"><code class="xref py py-class docutils literal notranslate"><span class="pre">PoincareMap</span></code></a> is the composition
@@ -694,6 +764,8 @@ equations follow slightly different step sequences; <code class="docutils litera
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#border-correction">Border correction</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#parameter-derivatives">Parameter derivatives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mixed-derivatives">Mixed derivatives</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#composition">Composition</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accuracy">Accuracy</a></li>
 </ul>

@@ -1,0 +1,6 @@
+﻿mappy\_ds.continuation.arclength\_continuation
+==============================================
+
+.. currentmodule:: mappy_ds.continuation
+
+.. autofunction:: arclength_continuation

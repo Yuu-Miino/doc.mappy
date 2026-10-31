@@ -13,7 +13,9 @@
       ~SystemFunction.expression
       ~SystemFunction.hessian_expression
       ~SystemFunction.jacobian_expression
+      ~SystemFunction.mixed_hessian_expression
       ~SystemFunction.param_keys
+      ~SystemFunction.parameter_jacobian_expression
 
    .. rubric:: Methods
 
@@ -24,6 +26,12 @@
       ~SystemFunction.eval
       ~SystemFunction.eval_hessian
       ~SystemFunction.eval_jacobian
+      ~SystemFunction.eval_mixed_hessian
+      ~SystemFunction.eval_mixed_hessian_for
+      ~SystemFunction.eval_parameter_jacobian
+      ~SystemFunction.eval_parameter_jacobian_for
       ~SystemFunction.hessian
       ~SystemFunction.jacobian
+      ~SystemFunction.mixed_hessian
+      ~SystemFunction.parameter_jacobian
       ~SystemFunction.params_array
