@@ -1,0 +1,6 @@
+mappy\_ds.Mode.step
+===================
+
+.. currentmodule:: mappy_ds
+
+.. automethod:: Mode.step

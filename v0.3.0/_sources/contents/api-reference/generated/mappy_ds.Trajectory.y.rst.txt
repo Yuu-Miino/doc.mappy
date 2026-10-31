@@ -1,0 +1,6 @@
+mappy\_ds.Trajectory.y
+======================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: Trajectory.y

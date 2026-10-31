@@ -1,0 +1,6 @@
+mappy\_ds.DiscreteMode.cod\_dim
+===============================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: DiscreteMode.cod_dim

@@ -1,0 +1,6 @@
+﻿mappy\_ds.continuation.StepFunctionResult
+=========================================
+
+.. currentmodule:: mappy_ds.continuation
+
+.. autoclass:: StepFunctionResult

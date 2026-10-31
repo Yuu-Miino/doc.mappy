@@ -1,0 +1,6 @@
+mappy\_ds.DiscreteMode.step
+===========================
+
+.. currentmodule:: mappy_ds
+
+.. automethod:: DiscreteMode.step

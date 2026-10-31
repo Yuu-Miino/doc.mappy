@@ -1,0 +1,6 @@
+﻿mappy\_ds.StepResult
+====================
+
+.. currentmodule:: mappy_ds
+
+.. autoclass:: StepResult

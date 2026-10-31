@@ -1,0 +1,6 @@
+mappy\_ds.SystemFunction.mixed\_hessian\_expression
+===================================================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: SystemFunction.mixed_hessian_expression

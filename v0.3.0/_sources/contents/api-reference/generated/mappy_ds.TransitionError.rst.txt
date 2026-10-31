@@ -1,0 +1,6 @@
+﻿mappy\_ds.TransitionError
+=========================
+
+.. currentmodule:: mappy_ds
+
+.. autoexception:: TransitionError

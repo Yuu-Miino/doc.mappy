@@ -1,0 +1,6 @@
+mappy\_ds.PoincareMap.dim
+=========================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: PoincareMap.dim

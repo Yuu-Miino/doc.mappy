@@ -1,0 +1,6 @@
+mappy\_ds.Diffeomorphism.image
+==============================
+
+.. currentmodule:: mappy_ds
+
+.. automethod:: Diffeomorphism.image

@@ -1,0 +1,6 @@
+mappy\_ds.SystemFunction.expression
+===================================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: SystemFunction.expression

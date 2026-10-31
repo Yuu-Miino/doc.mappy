@@ -1,0 +1,6 @@
+mappy\_ds.PoincareMap.trajectory
+================================
+
+.. currentmodule:: mappy_ds
+
+.. automethod:: PoincareMap.trajectory

@@ -1,0 +1,6 @@
+mappy\_ds.MapResult.eigvecs
+===========================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: MapResult.eigvecs

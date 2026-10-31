@@ -1,0 +1,6 @@
+mappy\_ds.Diffeomorphism.param\_keys
+====================================
+
+.. currentmodule:: mappy_ds
+
+.. autoproperty:: Diffeomorphism.param_keys

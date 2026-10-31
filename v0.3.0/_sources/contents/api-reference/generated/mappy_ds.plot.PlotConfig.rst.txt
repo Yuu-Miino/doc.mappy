@@ -1,0 +1,6 @@
+﻿mappy\_ds.plot.PlotConfig
+=========================
+
+.. currentmodule:: mappy_ds.plot
+
+.. autoclass:: PlotConfig
