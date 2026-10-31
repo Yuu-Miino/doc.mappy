@@ -1,0 +1,6 @@
+﻿mappy\_ds.root.trace\_local\_bf\_arclength
+==========================================
+
+.. currentmodule:: mappy_ds.root
+
+.. autofunction:: trace_local_bf_arclength
