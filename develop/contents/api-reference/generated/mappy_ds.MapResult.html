@@ -594,7 +594,9 @@
 with <code class="docutils literal notranslate"><span class="pre">m</span></code> indexing <code class="docutils literal notranslate"><span class="pre">param_keys</span></code>, if requested.</p>
 </dd>
 <dt><strong>hes_p</strong><span class="classifier">numpy.ndarray or None</span></dt><dd><p>Mixed second derivative <code class="docutils literal notranslate"><span class="pre">hes_p[i,</span> <span class="pre">j,</span> <span class="pre">m]</span> <span class="pre">=</span> <span class="pre">∂²y_i/(∂y0_j</span> <span class="pre">∂p_m)</span></code> if
-requested.</p>
+requested. <code class="docutils literal notranslate"><span class="pre">hes</span></code> and <code class="docutils literal notranslate"><span class="pre">hes_p</span></code> are the bilinear forms <code class="docutils literal notranslate"><span class="pre">B(x,</span> <span class="pre">y)</span></code>
+and <code class="docutils literal notranslate"><span class="pre">A_1(x,</span> <span class="pre">μ)</span></code> of the bifurcation literature; see
+<a class="reference internal" href="../../user_guide/derivatives.html#multilinear-forms"><span class="std std-ref">Multilinear forms</span></a> for the correspondence.</p>
 </dd>
 <dt><strong>param_keys</strong><span class="classifier">tuple of str</span></dt><dd><p>Parameters the columns of <code class="docutils literal notranslate"><span class="pre">jac_p</span></code> refer to (the map’s
 <a class="reference internal" href="mappy_ds.Map.param_keys.html#mappy_ds.Map.param_keys" title="mappy_ds.Map.param_keys"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Map.param_keys</span></code></a>).</p>
