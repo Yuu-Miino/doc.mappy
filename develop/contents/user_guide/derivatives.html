@@ -554,14 +554,14 @@ are those of <span class="math notranslate nohighlight">\(\bm g\)</span>, evalua
 <h3>Variational equations<a class="headerlink" href="#variational-equations" title="Link to this heading">#</a></h3>
 <p>Let <span class="math notranslate nohighlight">\(\bm\varphi(t, \bm x_0)\)</span> be the solution of
 <span class="math notranslate nohighlight">\(\dot{\bm x} = \bm f(\bm x)\)</span> with <span class="math notranslate nohighlight">\(\bm\varphi(0, \bm x_0) =
-\bm x_0\)</span>, and write <span class="math notranslate nohighlight">\(J(t) = \pderiv{\bm\varphi}{\bm x_0}\)</span> and
-<span class="math notranslate nohighlight">\(H(t) = \pderiv{J}{\bm x_0}\)</span>. Differentiating the ODE with respect to
+\bm x_0\)</span>, and write <span class="math notranslate nohighlight">\(J(t) = \partial_{\bm x_0}\bm\varphi\)</span> and
+<span class="math notranslate nohighlight">\(H(t) = \partial_{\bm x_0} J\)</span>. Differentiating the ODE with respect to
 the initial state gives the first and second variational equations</p>
 <div class="math notranslate nohighlight">
-\[\deriv{J}{t} = Df(\bm\varphi)\, J, \qquad J(0) = I,\]</div>
+\[\dot J = Df(\bm\varphi)\, J, \qquad J(0) = I,\]</div>
 <div class="math notranslate nohighlight">
-\[\deriv{H_{ijk}}{t} = \sum_{l,m} \parens{D^2 f(\bm\varphi)}_{ilm} J_{lj} J_{mk}
-                   + \sum_l \parens{Df(\bm\varphi)}_{il} H_{ljk},
+\[\dot H_{ijk} = \sum_{l,m} \parens{D^2 f(\bm\varphi)}_{ilm} J_{lj} J_{mk}
+             + \sum_l \parens{Df(\bm\varphi)}_{il} H_{ljk},
 \qquad H(0) = 0,\]</div>
 <p>where <span class="math notranslate nohighlight">\(Df\)</span> and <span class="math notranslate nohighlight">\(D^2 f\)</span> are the symbolic Jacobian and Hessian of
 the vector field. When derivatives are requested, a continuous mode
@@ -573,25 +573,24 @@ with the state.</p>
 <p>The mode does not stop at a fixed time but at the hitting time
 <span class="math notranslate nohighlight">\(\tau(\bm x_0)\)</span> of the border <span class="math notranslate nohighlight">\(q(\bm x) = 0\)</span>. With
 <span class="math notranslate nohighlight">\(\bm x_1 = \bm\varphi(\tau, \bm x_0)\)</span>, the mode map is
-<span class="math notranslate nohighlight">\(T(\bm x_0) = \bm\varphi(\tau(\bm x_0), \bm x_0)\)</span>. Differentiating
+<span class="math notranslate nohighlight">\(T(\bm x_0) = \bm\varphi(\tau(\bm x_0), \bm x_0)\)</span>. Writing
+<span class="math notranslate nohighlight">\(s(\bm x) = \nabla q(\bm x) \cdot \bm f(\bm x)\)</span> and differentiating
 <span class="math notranslate nohighlight">\(q(T(\bm x_0)) = 0\)</span> yields</p>
 <div class="math notranslate nohighlight">
-\[\pderiv{\tau}{\bm x_0} = -\frac{\nabla q(\bm x_1)\, J(\tau)}
-                               {\nabla q(\bm x_1) \cdot \bm f(\bm x_1)},\]</div>
+\[\pderiv{\tau}{\bm x_0} = -\frac{1}{s(\bm x_1)}\, \nabla q(\bm x_1)\, J(\tau),\]</div>
 <p>and therefore</p>
 <div class="math notranslate nohighlight">
 \[DT = \mathsf{B}(\bm x_1)\, J(\tau), \qquad
-\mathsf{B}(\bm x) = I - \frac{\bm f(\bm x) \otimes \nabla q(\bm x)}
-                    {\nabla q(\bm x) \cdot \bm f(\bm x)}.\]</div>
+\mathsf{B}(\bm x) = I - \frac{1}{s(\bm x)}\, \bm f(\bm x) \otimes \nabla q(\bm x).\]</div>
 <p><span class="math notranslate nohighlight">\(\mathsf{B}\)</span> (called <span class="math notranslate nohighlight">\(B\)</span> in the reference paper; the sans-serif
 letter keeps it apart from the bilinear form <span class="math notranslate nohighlight">\(B(\cdot,\cdot)\)</span> of
 <a class="reference internal" href="#multilinear-forms"><span class="std std-ref">Multilinear forms</span></a>) is the projection along the flow onto the tangent
 space of the border. Differentiating once more,</p>
 <div class="math notranslate nohighlight">
-\[D^2 T = \parens{\pderiv{\mathsf{B}}{\bm x}(\bm x_1)\, DT}\, J(\tau)
+\[D^2 T = \parens{\partial_{\bm x}\mathsf{B}(\bm x_1)\, DT}\, J(\tau)
       + \mathsf{B}(\bm x_1) \brackets{H(\tau)
       + \parens{Df(\bm x_1)\, J(\tau)} \otimes \pderiv{\tau}{\bm x_0}},\]</div>
-<p>with, writing <span class="math notranslate nohighlight">\(s(\bm x) = \nabla q(\bm x) \cdot \bm f(\bm x)\)</span>,</p>
+<p>with</p>
 <div class="math notranslate nohighlight">
 \[\pderiv{\mathsf{B}_{ad}}{x_e} =
 -\frac{(Df)_{ae}\, (\nabla q)_d + f_a\, (\nabla^2 q)_{de}}{s}
@@ -617,18 +616,17 @@ continuation and the detection of bifurcations need; the sections above give
 derivatives with respect to the state only.</p>
 <p>For a discrete mode the parameter Jacobian <span class="math notranslate nohighlight">\(\partial_p f\)</span> comes
 straight from SymPy. For a continuous mode the sensitivity
-<span class="math notranslate nohighlight">\(P = \partial\varphi/\partial p\)</span> of the flow obeys</p>
+<span class="math notranslate nohighlight">\(P = \partial_p\bm\varphi\)</span> of the flow obeys</p>
 <div class="math notranslate nohighlight">
-\[\deriv{P}{t} = \pderiv{\bm f}{\bm x}\parens{\varphi}\, P
-               + \pderiv{\bm f}{p}\parens{\varphi}, \qquad P(0) = 0,\]</div>
+\[\dot P = Df(\bm\varphi)\, P + \partial_p \bm f(\bm\varphi), \qquad P(0) = 0,\]</div>
 <p>which is integrated together with the state. At a border
 <span class="math notranslate nohighlight">\(q(\bm x, p) = 0\)</span> the hitting time depends on the parameters too, both
 through the trajectory and through the border itself, and the mode map
 <span class="math notranslate nohighlight">\(\bm x_0 \mapsto \varphi(\tau(\bm x_0, p), \bm x_0, p)\)</span> has</p>
 <div class="math notranslate nohighlight">
-\[\pderiv{T}{p} = \mathsf{B}\, P(\tau) - \frac{\bm f(\bm x_1)}{\nabla q \cdot \bm f(\bm x_1)}
-                \otimes \pderiv{q}{p}(\bm x_1, p),\]</div>
-<p>with the same <span class="math notranslate nohighlight">\(\mathsf{B}\)</span> as in the border correction above. Compositions
+\[\partial_p T = \mathsf{B}\, P(\tau)
+               - \frac{1}{s(\bm x_1)}\, \bm f(\bm x_1) \otimes \partial_p q(\bm x_1, p),\]</div>
+<p>with the same <span class="math notranslate nohighlight">\(\mathsf{B}\)</span> and <span class="math notranslate nohighlight">\(s\)</span> as in the border correction above. Compositions
 follow the chain rule <span class="math notranslate nohighlight">\(\partial_p (g \circ f) = Dg\, \partial_p f +
 \partial_p g\)</span>.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">res</span> <span class="o">=</span> <span class="n">pmap</span><span class="o">.</span><span class="n">image_detail</span><span class="p">(</span><span class="o">-</span><span class="mf">3.0</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">parameter_jacobian</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
@@ -648,26 +646,27 @@ needs (the conditions involve <span class="math notranslate nohighlight">\(DT^n\
 involves <span class="math notranslate nohighlight">\(\partial_p DT^n\)</span>), and what makes
 <a class="reference internal" href="../api-reference/generated/mappy_ds.root.find_local_bf.html#mappy_ds.root.find_local_bf" title="mappy_ds.root.find_local_bf"><code class="xref py py-func docutils literal notranslate"><span class="pre">find_local_bf()</span></code></a> fully analytic.</p>
 <p>For a continuous mode the sensitivity of the flow Jacobian,
-<span class="math notranslate nohighlight">\(M = \partial^2\varphi/\partial\bm x_0\,\partial p\)</span>, obeys</p>
+<span class="math notranslate nohighlight">\(M = \partial_{\bm x_0} P = \partial_{\bm x_0}\partial_p\bm\varphi\)</span>, obeys</p>
 <div class="math notranslate nohighlight">
-\[\deriv{M_{ijm}}{t} = \sum_{l,r} (D^2 f)_{ilr} J_{lj} P_{rm}
-                   + \sum_l (\partial_p Df)_{ilm} J_{lj}
-                   + \sum_l (Df)_{il} M_{ljm}, \qquad M(0) = 0,\]</div>
+\[\dot M_{ijm} = \sum_{l,r} (D^2 f)_{ilr} J_{lj} P_{rm}
+             + \sum_l (\partial_p Df)_{ilm} J_{lj}
+             + \sum_l (Df)_{il} M_{ljm}, \qquad M(0) = 0,\]</div>
 <p>integrated with the state, and at a border the parameter derivative
-<span class="math notranslate nohighlight">\(\partial_p T = \mathsf{B} P + G\)</span>, <span class="math notranslate nohighlight">\(G = -\bm f \otimes \partial_p q / s\)</span>,
+<span class="math notranslate nohighlight">\(\partial_p T = \mathsf{B} P + G\)</span>, <span class="math notranslate nohighlight">\(G = -s^{-1}\, \bm f \otimes \partial_p q\)</span>,
 is differentiated once more with respect to <span class="math notranslate nohighlight">\(\bm x_0\)</span>. Every quantity
 evaluated at the hitting point <span class="math notranslate nohighlight">\(\bm x_1\)</span> depends on <span class="math notranslate nohighlight">\(\bm x_0\)</span>
 through the mode Jacobian <span class="math notranslate nohighlight">\(J_T = \mathsf{B} J\)</span>, and <span class="math notranslate nohighlight">\(P(\tau)\)</span> also through
 <span class="math notranslate nohighlight">\(\tau\)</span>:</p>
 <div class="math notranslate nohighlight">
-\[\pderiv{(\partial_p T)}{\bm x_0}
-= \parens{\pderiv{\mathsf{B}}{\bm x} J_T} P
+\[\partial_{\bm x_0}\partial_p T
+= \parens{\partial_{\bm x}\mathsf{B}\, J_T} P
 + \mathsf{B} \brackets{ M + \parens{Df\, P + \partial_p \bm f} \otimes \pderiv{\tau}{\bm x_0} }
-+ \parens{\pderiv{G}{\bm x} J_T},
-\qquad
-\pderiv{G}{\bm x} = -\frac{Df \otimes \partial_p q + \bm f \otimes \partial^2_{\bm x p} q}{s}
-                    + \frac{(\bm f \otimes \partial_p q) \otimes \partial_{\bm x} s}{s^2},\]</div>
-<p>with <span class="math notranslate nohighlight">\(\partial \mathsf{B}/\partial\bm x\)</span> as in the border correction above. The
++ \parens{\partial_{\bm x} G\, J_T},\]</div>
+<p>where</p>
+<div class="math notranslate nohighlight">
+\[\partial_{\bm x} G = -\frac{1}{s}\parens{Df \otimes \partial_p q + \bm f \otimes \partial^2_{\bm x p} q}
+                   + \frac{1}{s^2}\, (\bm f \otimes \partial_p q) \otimes \partial_{\bm x} s,\]</div>
+<p>and <span class="math notranslate nohighlight">\(\partial_{\bm x}\mathsf{B}\)</span> is as in the border correction above. The
 last term vanishes for borders that do not depend on the parameters.
 Compositions follow <span class="math notranslate nohighlight">\(\partial_p D(g \circ f) = D^2 g\,[Df, \partial_p f]
 + (\partial_p Dg)\, Df + Dg\, \partial_p Df\)</span>.</p>
@@ -698,7 +697,7 @@ C(\bm x, \bm y, \bm z)_i &amp;= \sum_{j,k,l}
   \frac{\partial^3 T_i}{\partial x_j\,\partial x_k\,\partial x_l}\, x_j y_k z_l, \\
 A_1(\bm x, \bm\mu)_i &amp;= \sum_{j,m} \frac{\partial^2 T_i}{\partial x_j\,\partial p_m}\, x_j \mu_m, \\
 B(\bm q, \cdot)_{ij} &amp;= \sum_k \frac{\partial^2 T_i}{\partial x_j\,\partial x_k}\, q_k,
-&amp; \pderiv{(DT)}{x_k} &amp;= B(\cdot, \bm e_k).\end{split}\]</div>
+&amp; \partial_{x_k} DT &amp;= B(\cdot, \bm e_k).\end{split}\]</div>
 <p><span class="math notranslate nohighlight">\(B(\bm q, \cdot)\)</span> is the matrix of the linear map
 <span class="math notranslate nohighlight">\(\bm y \mapsto B(\bm q, \bm y)\)</span>, i.e. the derivative of the Jacobian
 <span class="math notranslate nohighlight">\(DT\)</span> in the direction <span class="math notranslate nohighlight">\(\bm q\)</span>. The trilinear form <span class="math notranslate nohighlight">\(C\)</span> is
