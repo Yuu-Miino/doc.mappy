@@ -625,7 +625,7 @@ straight from SymPy. For a continuous mode the sensitivity
 through the trajectory and through the border itself, and the mode map
 <span class="math notranslate nohighlight">\(\bm x_0 \mapsto \varphi(\tau(\bm x_0, p), \bm x_0, p)\)</span> has</p>
 <div class="math notranslate nohighlight">
-\[\partial_p T = P\, J_p(\tau)
+\[\partial_p T = P(\bm x_1)\, J_p(\tau)
                - \frac{1}{s(\bm x_1)}\, \bm f(\bm x_1) \otimes \partial_p q(\bm x_1, p),\]</div>
 <p>with the same <span class="math notranslate nohighlight">\(P\)</span> and <span class="math notranslate nohighlight">\(s\)</span> as in the border correction above. Compositions
 follow the chain rule <span class="math notranslate nohighlight">\(\partial_p (g \circ f) = Dg\, \partial_p f +
@@ -654,10 +654,12 @@ involves <span class="math notranslate nohighlight">\(\partial_p DT^n\)</span>),
              + \sum_l (Df)_{il} H_{p,ljm}, \qquad H_p(0) = 0,\]</div>
 <p>integrated with the state, and at a border the parameter derivative
 <span class="math notranslate nohighlight">\(\partial_p T = P J_p + G\)</span>, <span class="math notranslate nohighlight">\(G = -s^{-1}\, \bm f \otimes \partial_p q\)</span>,
-is differentiated once more with respect to <span class="math notranslate nohighlight">\(\bm x_0\)</span>. Every quantity
-evaluated at the hitting point <span class="math notranslate nohighlight">\(\bm x_1\)</span> depends on <span class="math notranslate nohighlight">\(\bm x_0\)</span>
-through the mode Jacobian <span class="math notranslate nohighlight">\(J_T = P J\)</span>, and <span class="math notranslate nohighlight">\(J_p(\tau)\)</span> also through
-<span class="math notranslate nohighlight">\(\tau\)</span>:</p>
+is differentiated once more with respect to <span class="math notranslate nohighlight">\(\bm x_0\)</span>. Here <span class="math notranslate nohighlight">\(P\)</span>,
+<span class="math notranslate nohighlight">\(s\)</span>, <span class="math notranslate nohighlight">\(\bm f\)</span>, <span class="math notranslate nohighlight">\(Df\)</span>, <span class="math notranslate nohighlight">\(\partial_p \bm f\)</span>, <span class="math notranslate nohighlight">\(G\)</span> and the derivatives of <span class="math notranslate nohighlight">\(q\)</span> are
+evaluated at the hitting point <span class="math notranslate nohighlight">\(\bm x_1\)</span>, and <span class="math notranslate nohighlight">\(J\)</span>, <span class="math notranslate nohighlight">\(J_p\)</span>,
+<span class="math notranslate nohighlight">\(H_p\)</span> at <span class="math notranslate nohighlight">\(\tau\)</span>. Every quantity evaluated at <span class="math notranslate nohighlight">\(\bm x_1\)</span> depends
+on <span class="math notranslate nohighlight">\(\bm x_0\)</span> through the mode Jacobian <span class="math notranslate nohighlight">\(J_T = P J\)</span>, and
+<span class="math notranslate nohighlight">\(J_p(\tau)\)</span> also through <span class="math notranslate nohighlight">\(\tau\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[\partial_{\bm x_0}\partial_p T
 = \parens{\partial_{\bm x} P\, J_T} J_p
