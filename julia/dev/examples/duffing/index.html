@@ -36,8 +36,8 @@ println(&quot;traced to B = $(last1.params.B); multipliers $(last1.info[:eigvals
 
 bf1 = find_local_bf(pmap, last1.y, last1.params, :B, pi)
 println(&quot;period doubling #1 at B = $(bf1.params.B), y = $(bf1.y)&quot;)</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">1-periodic point at B = 0.1: [0.23214761155186928, 0.07559158224737013]
-traced to B = 0.17; multipliers ComplexF64[-0.9741584431233166 + 0.0im, -0.29215939649045375 + 0.0im]
-period doubling #1 at B = 0.17168758535774528, y = [0.08386459595579909, 0.09277723431544777]</code></pre><p>Past the bifurcation the point is a saddle; natural-parameter continuation follows it anyway, up to the second period doubling:</p><pre><code class="language-julia hljs">steps2 = trace_cycle(pmap, last1.y, last1.params, :B, 0.36; resolution = 20)
+traced to B = 0.17; multipliers ComplexF64[-0.9741584431229657 + 0.0im, -0.2921593964905629 + 0.0im]
+period doubling #1 at B = 0.17168758535774492, y = [0.08386459595579984, 0.09277723431544789]</code></pre><p>Past the bifurcation the point is a saddle; natural-parameter continuation follows it anyway, up to the second period doubling:</p><pre><code class="language-julia hljs">steps2 = trace_cycle(pmap, last1.y, last1.params, :B, 0.36; resolution = 20)
 last2 = steps2[end]
 println(&quot;traced to B = $(last2.params.B); multipliers $(last2.info[:eigvals])&quot;)
 
@@ -47,17 +47,26 @@ println(&quot;period doubling #2 at B = $(bf2.params.B), y = $(bf2.y)&quot;)
 reference_pd = (0.171687, 0.368655)
 for (got, ref) in zip((bf1.params.B, bf2.params.B), reference_pd)
     println(&quot;check: B = $(round(got; digits = 6)) vs reference $ref -&gt; &quot;, abs(got - ref) &lt; 1.0e-5 ? &quot;OK&quot; : &quot;MISMATCH&quot;)
-end</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">traced to B = 0.36; multipliers ComplexF64[-1.1901883099563149 + 0.0im, -0.2391298425828654 + 0.0im]
-period doubling #2 at B = 0.36865464722535946, y = [-0.30977779561554303, 0.14187456888846003]
+end</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">traced to B = 0.36; multipliers ComplexF64[-1.1901883099478514 + 0.0im, -0.23912984258457048 + 0.0im]
+period doubling #2 at B = 0.3686546472253591, y = [-0.30977779561554253, 0.14187456888846006]
 check: B = 0.171688 vs reference 0.171687 -&gt; OK
 check: B = 0.368655 vs reference 0.368655 -&gt; OK</code></pre><h2 id="Period-doubling-curve"><a class="docs-heading-anchor" href="#Period-doubling-curve">Period-doubling curve</a><a id="Period-doubling-curve-1"></a><a class="docs-heading-anchor-permalink" href="#Period-doubling-curve" title="Permalink"></a></h2><p><a href="../../api/#MappyDS.trace_local_bf-Tuple{AbstractMap, Any, NamedTuple, Symbol, Real, Symbol, Real}"><code>trace_local_bf</code></a> continues the first bifurcation point in the <span>$(B, B_0)$</span> plane:</p><pre><code class="language-julia hljs">curve = trace_local_bf(pmap, bf1.y, bf1.params, :B0, bf1.theta, :B, 0.35; resolution = 10)
 println(&quot;period-doubling curve ($(length(curve)) points):&quot;)
 println(&quot;       B        B0&quot;)
 for s in curve
     println(&quot;  $(round(s.params.B; digits = 5))  $(round(s.params.B0; digits = 5))&quot;)
-end
-
-fig = Figure(; size = (600, 350))
+end</code></pre><pre class="documenter-example-output"><code class="nohighlight hljs ansi">period-doubling curve (10 points):
+       B        B0
+  0.17169  0.1
+  0.1915  0.11993
+  0.21131  0.13796
+  0.23113  0.15118
+  0.25094  0.15832
+  0.27075  0.15961
+  0.29056  0.15581
+  0.31038  0.14768
+  0.33019  0.13566
+  0.35  0.11969</code></pre><pre><code class="language-julia hljs">fig = Figure(; size = (600, 350))
 ax = Axis(fig[1, 1]; xlabel = &quot;B&quot;, ylabel = &quot;B0&quot;, title = &quot;period-doubling curve&quot;)
 lines!(ax, [s.params.B for s in curve], [s.params.B0 for s in curve]; color = :red)
 scatter!(ax, [s.params.B for s in curve], [s.params.B0 for s in curve]; color = :red)
@@ -81,4 +90,4 @@ fig = Figure(; size = (800, 400))
 ax = Axis(fig[1, 1]; xlabel = &quot;B&quot;, ylabel = &quot;x&quot;, limits = (0.1, 0.375, nothing, nothing))
 scatter!(ax, repeat(collect(b_values); inner = size(xs, 1)), vec(xs); markersize = 3, color = :gray)
 vlines!(ax, collect(reference_pd); color = :red, linestyle = :dash)
-fig</code></pre><img src="1daaf118.png" alt="Example block output" width="800" height="400"/><hr/><p><em>This page was generated using <a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a>.</em></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../izhikevich/">« Izhikevich neuron</a><a class="docs-footer-nextpage" href="../forced_alpazur/">Forced Alpazur oscillator »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.20.0 on <span class="colophon-date" title="Monday 9 November 2026 02:10">Monday 9 November 2026</span>. Using Julia version 1.13.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+fig</code></pre><img src="1daaf118.png" alt="Example block output" width="800" height="400"/><hr/><p><em>This page was generated using <a href="https://github.com/fredrikekre/Literate.jl">Literate.jl</a>.</em></p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../izhikevich/">« Izhikevich neuron</a><a class="docs-footer-nextpage" href="../forced_alpazur/">Forced Alpazur oscillator »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="auto">Automatic (OS)</option><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option><option value="catppuccin-latte">catppuccin-latte</option><option value="catppuccin-frappe">catppuccin-frappe</option><option value="catppuccin-macchiato">catppuccin-macchiato</option><option value="catppuccin-mocha">catppuccin-mocha</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> version 1.20.0 on <span class="colophon-date" title="Monday 9 November 2026 02:13">Monday 9 November 2026</span>. Using Julia version 1.13.3.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
